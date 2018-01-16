@@ -1,0 +1,3 @@
+test-css-color-modifying-colors {
+	color: color-mod(#639 alpha(80%));
+}

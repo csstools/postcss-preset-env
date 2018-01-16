@@ -1,0 +1,5 @@
+$color: rebeccapurple;
+
+test-css-color-modifying-colors {
+	color: color-mod($color alpha(80%));
+}

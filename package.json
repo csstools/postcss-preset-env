@@ -1,0 +1,85 @@
+{
+  "name": "postcss-preset-env",
+  "version": "2.0.0",
+  "description": "Convert modern CSS into something browsers understand",
+  "author": "Jonathan Neal <jonathantneal@hotmail.com>",
+  "license": "CC0-1.0",
+  "repository": "jonathantneal/postcss-preset-env",
+  "homepage": "https://github.com/jonathantneal/postcss-preset-env#readme",
+  "bugs": "https://github.com/jonathantneal/postcss-preset-env/issues",
+  "main": "index.bundle.js",
+  "module": "index.js",
+  "files": [
+    "index.js",
+    "index.bundle.js",
+    "lib"
+  ],
+  "scripts": {
+    "prepublishOnly": "npm test",
+    "pretest": "rollup -c .rollup.js --silent",
+    "test": "echo 'Running tests...'; npm run test:ec && npm run test:js && npm run test:tape",
+    "test:ec": "echint --ignore index.bundle.js test",
+    "test:js": "eslint *.js lib/*.js --cache --ignore-path .gitignore --quiet",
+    "test:tape": "postcss-tape"
+  },
+  "engines": {
+    "node": ">=4.0.0"
+  },
+  "dependencies": {
+    "browserslist": "^2.11",
+    "caniuse-lite": "^1.0",
+    "cssdb": "^1.3",
+    "postcss": "^6.0",
+    "postcss-apply": "^0.8",
+    "postcss-attribute-case-insensitive": "^2.0",
+    "postcss-color-mod-function": "^1.0",
+    "postcss-color-hex-alpha": "^3.0",
+    "postcss-color-rebeccapurple": "^3.0",
+    "postcss-custom-media": "^6.0",
+    "postcss-custom-properties": "^6.2",
+    "postcss-custom-selectors": "^4.0",
+    "postcss-dir-pseudo-class": "^2.1",
+    "postcss-font-family-system-ui": "github:jonathantneal/postcss-font-family-system-ui",
+    "postcss-font-variant": "^3.0",
+    "postcss-image-set-polyfill": "^0.4",
+    "postcss-initial": "^2.0",
+    "postcss-logical": "^1.0",
+    "postcss-media-minmax": "^3.0",
+    "postcss-nesting": "^4.2",
+    "postcss-pseudo-class-any-link": "^4.0",
+    "postcss-replace-overflow-wrap": "^2.0",
+    "postcss-selector-matches": "^3.0",
+    "postcss-selector-not": "^3.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26",
+    "babel-eslint": "^8.2",
+    "babel-preset-env": "^1.6",
+    "echint": "^4.0",
+    "eslint": "^4.15",
+    "eslint-config-dev": "2.0",
+    "postcss-simple-vars": "^4.1",
+    "postcss-tape": "2.2",
+    "pre-commit": "^1.2",
+    "rollup": "^0.54",
+    "rollup-plugin-babel": "^3.0"
+  },
+  "eslintConfig": {
+    "extends": "dev",
+    "parser": "babel-eslint"
+  },
+  "keywords": [
+    "postcss",
+    "css",
+    "postcss-plugin",
+    "specifications",
+    "specs",
+    "features",
+    "lists",
+    "stages",
+    "w3c",
+    "csswg",
+    "future",
+    "next"
+  ]
+}

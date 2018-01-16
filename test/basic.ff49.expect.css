@@ -1,0 +1,13 @@
+test-selectors-dir-pseudo:dir(ltr) {
+	order: 1;
+}
+
+test-css-nesting {
+	& {
+		order: 2;
+	}
+}
+
+test-css-color-valdef-color-rebeccapurple {
+	color: rebeccapurple;
+}
