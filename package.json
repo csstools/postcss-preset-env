@@ -39,7 +39,7 @@
     "postcss-custom-properties": "^6.2",
     "postcss-custom-selectors": "^4.0",
     "postcss-dir-pseudo-class": "^2.1",
-    "postcss-font-family-system-ui": "github:jonathantneal/postcss-font-family-system-ui",
+    "postcss-font-family-system-ui": "github:jonathantneal/postcss-system-ui-font",
     "postcss-font-variant": "^3.0",
     "postcss-image-set-polyfill": "^0.4",
     "postcss-initial": "^2.0",
