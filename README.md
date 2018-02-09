@@ -166,7 +166,7 @@ grunt.initConfig({
 The `stage` key determines which CSS features to polyfill, based upon their
 position in the process of becoming implemented web standards found at [cssdb].
 The stages are 0 through 5. You can specify `false` to ignore all stages and
-rely on [features][#features] exclusively.
+rely on [features](#features) exclusively.
 
 ```js
 require('postcss-preset-env')({
@@ -180,7 +180,7 @@ The `features` key determines which CSS features to polyfill based upon their
 unique specification id found at [cssdb]. Pass `true` to enable a feature, and
 pass `false` to disable a feature. Pass an object `{}` to configure options of
 an individual polyfill. Any features not explicitly toggled here will be
-determined by [stage][#stage].
+determined by [stage](#stage).
 
 ```js
 require('postcss-preset-env')({
@@ -231,3 +231,6 @@ require('postcss-preset-env')({
 [PostCSS]: https://github.com/postcss/postcss
 [Gulp PostCSS]: https://github.com/postcss/gulp-postcss
 [Grunt PostCSS]: https://github.com/nDmitry/grunt-postcss
+[cssdb]: https://jonathantneal.github.io/css-db/
+[caniuse]: https://caniuse.com/
+[postcss-preset-env]: https://github.com/jonathantneal/postcss-preset-env/
