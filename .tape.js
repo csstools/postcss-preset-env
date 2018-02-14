@@ -37,6 +37,21 @@ module.exports = {
 				}
 			}
 		},
+		'css-variables': {
+			message: 'supports { browsers: "ie >= 10" } usage',
+			options: {
+				browsers: 'ie >= 10'
+			}
+		},
+		'css-variables:disabled': {
+			message: 'supports { browsers: "ie >= 10", features: { "css-variables": false } } usage',
+			options: {
+				browsers: 'ie >= 10',
+				features: {
+					'css-variables': false
+				}
+			}
+		},
 		'insert:before': {
 			message: 'supports { stage: 2, before: { "css-color-modifying-colors": [ require("postcss-simple-vars") ] } } usage',
 			options: {
