@@ -72,13 +72,16 @@ export default postcss.plugin('postcss-preset-env', opts => {
 	return (root, result) => {
 		// browsers supported by the configuration
 		const supportedBrowsers = browserslist(browsers, {
-			path: result.root.source && result.root.source.input && result.root.source.input.file
+			path: result.root.source && result.root.source.input && result.root.source.input.file,
+			ignoreUnknownVersions: true
 		});
 
 		// features supported by the stage and browsers
 		const supportedFeatures = stagedFeatures.filter(
 			feature => supportedBrowsers.some(
-				supportedBrowser => browserslist(feature.browsers).some(
+				supportedBrowser => browserslist(feature.browsers, {
+					ignoreUnknownVersions: true
+				}).some(
 					polyfillBrowser => polyfillBrowser === supportedBrowser
 				)
 			)
