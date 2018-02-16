@@ -21,15 +21,16 @@ npm install postcss-preset-env
   --mainColor: #12345678;
 }
 
-@media (--viewport-medium) {
-  body {
-    color: var(--mainColor);
-    font-family: system-ui;
-    overflow-wrap: break-word;
-  }
+body {
+  color: var(--mainColor);
+  font-family: system-ui;
+  overflow-wrap: break-word;
+}
 
-  :--heading {
-    background-image: image-set(url(img/heading.png) 1x, url(img/heading@2x.png) 2x);
+:--heading {
+  background-image: image-set(url(img/heading.png) 1x, url(img/heading@2x.png) 2x);
+
+  @media (--viewport-medium) {
     margin-block: 0;
   }
 }
@@ -44,23 +45,31 @@ a {
 
 /* becomes */
 
-@media (max-width: 50rem) {
-  body {
-    color: rgba(18, 52, 86, 0.47059);
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue;
-    word-wrap: break-word;
-  }
+:root {
+  --mainColor: rgba(18, 52, 86, 0.47059);
+}
 
+body {
+  color: rgba(18, 52, 86, 0.47059);
+  color: var(--mainColor);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Droid Sans, Helvetica Neue;
+  word-wrap: break-word;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  background-image: url(img/heading.png);
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   h1, h2, h3, h4, h5, h6 {
-    background-image: url(img/heading.png);
-    margin-top: 0;
-    margin-bottom: 0;
+    background-image: url(img/heading@2x.png)
   }
 }
 
-@media (max-width: 50rem) and (-webkit-min-device-pixel-ratio: 2), (max-width: 50rem) and (min-resolution: 192dpi) {
+@media (max-width: 50rem) {
   h1, h2, h3, h4, h5, h6 {
-    background-image: url(img/heading@2x.png);
+    margin-top: 0;
+    margin-bottom: 0;
   }
 }
 

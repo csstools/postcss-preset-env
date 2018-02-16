@@ -1,5 +1,10 @@
 # Changes to PostCSS Preset Env
 
+### 3.0.0 (February 16, 2018)
+
+- Updated: `postcss-color-mod-function` to v2.4 (minor update)
+- Updated: `postcss-custom-properties` to v7.0 (major update)
+
 ### 2.2.0 (February 14, 2018)
 
 - Updated: `browserslist` to v3.1 (major update)
