@@ -8,4 +8,9 @@ test-css-nesting {
 
 test-css-color-valdef-color-rebeccapurple {
 	color: rebeccapurple;
+	order: 3;
+}
+
+test:focus-visible {
+	order: 4;
 }
