@@ -1,5 +1,9 @@
 # Changes to PostCSS Preset Env
 
+### 3.1.0 (February 17, 2018)
+
+- Added: `postcss-focus-visible`
+
 ### 3.0.0 (February 16, 2018)
 
 - Updated: `postcss-color-mod-function` to v2.4 (minor update)
