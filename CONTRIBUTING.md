@@ -58,6 +58,16 @@ scope and avoid unrelated commits.
 
 That’s it! Now [open a pull request] with a clear title and description.
 
+## Adding a new plugin to Postcss Preset Env
+
+If you want to add a new plugin, follow the
+[pull request guidelines](#submitting-pull-requests) while making these changes:
+
+- Ensure the feature exists in [cssdb](https://github.com/jonathantneal/css-db).
+- Add the plugin to the `dependencies` list in [`package.json`](package.json).
+- Add the plugin to
+  [`lib/plugins-by-specification-id.js`](lib/plugins-by-specification-id.js).
+
 [already been reported]: issues
 [fork this project]:     fork
 [live example]:          https://codepen.io/pen
