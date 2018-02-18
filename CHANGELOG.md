@@ -1,5 +1,9 @@
 # Changes to PostCSS Preset Env
 
+### 3.2.0 (February 18, 2018)
+
+- Added: `postcss-page-break` which has moved here from Autoprefixer
+
 ### 3.1.0 (February 17, 2018)
 
 - Added: `postcss-focus-visible`
