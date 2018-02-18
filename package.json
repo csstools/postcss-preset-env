@@ -48,6 +48,7 @@
     "postcss-logical": "^1",
     "postcss-media-minmax": "^3",
     "postcss-nesting": "^4",
+    "postcss-page-break": "^1",
     "postcss-pseudo-class-any-link": "^4",
     "postcss-replace-overflow-wrap": "^2",
     "postcss-selector-matches": "^3",

@@ -16,3 +16,7 @@ test-css-color-valdef-color-rebeccapurple {
 test:focus-visible {
 	order: 4;
 }
+
+test-break {
+	break-inside: avoid;
+}
