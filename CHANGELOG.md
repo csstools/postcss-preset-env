@@ -1,5 +1,9 @@
 # Changes to PostCSS Preset Env
 
+### 3.2.1 (February 21, 2018)
+
+- Updated: Use the latest tested version of all dependencies
+
 ### 3.2.0 (February 18, 2018)
 
 - Added: `postcss-page-break` which has moved here from Autoprefixer
