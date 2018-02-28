@@ -1,5 +1,9 @@
 # Changes to PostCSS Preset Env
 
+### 3.2.2 (February 27, 2018)
+
+- Updated: `postcss-color-mod-function` to v2.4.2 (patch update)
+
 ### 3.2.1 (February 21, 2018)
 
 - Updated: Use the latest tested version of all dependencies

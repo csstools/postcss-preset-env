@@ -1,6 +1,6 @@
 {
   "name": "postcss-preset-env",
-  "version": "3.2.1",
+  "version": "3.2.2",
   "description": "Convert modern CSS into something browsers understand",
   "author": "Jonathan Neal <jonathantneal@hotmail.com>",
   "license": "CC0-1.0",
@@ -33,7 +33,7 @@
     "postcss-apply": "^0.8.0",
     "postcss-attribute-case-insensitive": "^2.0.0",
     "postcss-color-hex-alpha": "^3.0.0",
-    "postcss-color-mod-function": "^2.4.1",
+    "postcss-color-mod-function": "^2.4.2",
     "postcss-color-rebeccapurple": "^3.0.0",
     "postcss-color-rgb": "^2.0.0",
     "postcss-custom-media": "^6.0.0",
@@ -64,7 +64,7 @@
     "postcss-simple-vars": "^4.1.0",
     "postcss-tape": "^2.2.0",
     "pre-commit": "^1.2.2",
-    "rollup": "^0.56.2",
+    "rollup": "^0.56.3",
     "rollup-plugin-babel": "^3.0.3"
   },
   "eslintConfig": {
