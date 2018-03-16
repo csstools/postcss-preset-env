@@ -7,18 +7,18 @@
   "repository": "jonathantneal/postcss-preset-env",
   "homepage": "https://github.com/jonathantneal/postcss-preset-env#readme",
   "bugs": "https://github.com/jonathantneal/postcss-preset-env/issues",
-  "main": "index.bundle.js",
-  "module": "index.js",
+  "main": "index.cjs.js",
+  "module": "index.es.js",
   "files": [
-    "index.js",
-    "index.bundle.js",
+    "index.cjs.js",
+    "index.es.js",
     "lib"
   ],
   "scripts": {
     "prepublishOnly": "npm test",
     "pretest": "rollup -c .rollup.js --silent",
     "test": "echo 'Running tests...'; npm run test:ec && npm run test:js && npm run test:tape",
-    "test:ec": "echint --ignore index.bundle.js test",
+    "test:ec": "echint --ignore index.*.js test",
     "test:js": "eslint *.js lib/*.js --cache --ignore-path .gitignore --quiet",
     "test:tape": "postcss-tape"
   },

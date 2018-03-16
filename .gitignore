@@ -1,5 +1,5 @@
 node_modules
-index.bundle.js
+index.*.js
 package-lock.json
 *.log*
 *.result.css
