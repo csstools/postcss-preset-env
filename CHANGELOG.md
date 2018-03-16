@@ -1,5 +1,12 @@
 # Changes to PostCSS Preset Env
 
+### 3.3.0 (March 16, 2018)
+
+- Updated: `postcss-apply` to v0.9.0 (minor update)
+- Updated: `browserslist` to v3.1.2 (patch update)
+- Updated: `caniuse-lite` to v1.0.30000815 (patch update)
+- Updated: distribution to cjs and es bundles
+
 ### 3.2.2 (February 27, 2018)
 
 - Updated: `postcss-color-mod-function` to v2.4.2 (patch update)
