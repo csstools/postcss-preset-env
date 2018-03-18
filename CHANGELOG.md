@@ -1,5 +1,11 @@
 # Changes to PostCSS Preset Env
 
+### 3.4.0 (March 18, 2018)
+
+- Updated: `browserslist` to v3.2.0 (minor update)
+- Updated: `postcss` to v6.0.20 (patch update)
+- Updated: `postcss-image-set-polyfill` to `@csstools/postcss-image-set-function` (hopefully temporarily)
+
 ### 3.3.0 (March 16, 2018)
 
 - Updated: `postcss-apply` to v0.9.0 (minor update)
