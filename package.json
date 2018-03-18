@@ -26,6 +26,7 @@
     "node": ">=4.0.0"
   },
   "dependencies": {
+    "@csstools/postcss-image-set-function": "^1.0.0",
     "browserslist": "^3.2.0",
     "caniuse-lite": "^1.0.30000815",
     "cssdb": "^1.6.0",
@@ -43,7 +44,6 @@
     "postcss-focus-visible": "^2.0.0",
     "postcss-font-family-system-ui": "^3.0.0",
     "postcss-font-variant": "^3.0.0",
-    "postcss-image-set-polyfill": "^0.4.4",
     "postcss-initial": "^2.0.0",
     "postcss-logical": "^1.0.2",
     "postcss-media-minmax": "^3.0.0",
