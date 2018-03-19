@@ -208,7 +208,7 @@ environment variables.
 
 ```js
 require('postcss-preset-env')({
-  browsers: 'last two versions'
+  browsers: 'last 2 versions'
 })
 ```
 
