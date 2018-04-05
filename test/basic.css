@@ -17,6 +17,10 @@ test:focus-visible {
 	order: 4;
 }
 
+test-matches:matches(.foo, .bar) {
+	order: 5;
+}
+
 test-break {
 	break-inside: avoid;
 }

@@ -15,6 +15,10 @@ test.focus-visible {
 	order: 4;
 }
 
+test-matches.foo, test-matches.bar {
+	order: 5;
+}
+
 test-break {
 	page-break-inside: avoid;
 	break-inside: avoid;

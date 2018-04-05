@@ -1,5 +1,14 @@
 # Changes to PostCSS Preset Env
 
+### 3.5.0 (April 5, 2018)
+
+- Fixed: `selectors-matches-pseudo` mapping to allow `:matches` polyfilling
+- Updated: `postcss-dir-pseudo-class` to v3.0.0 (major update, non-breaking for this project)
+- Updated: `postcss-logical` to v1.1.1 (minor update)
+- Updated: `postcss` to v6.0.21 (patch update)
+- Updated: `browserslist` to v3.2.4 (patch update)
+- Updated: `caniuse-lite` to v1.0.30000823 (patch update)
+
 ### 3.4.0 (March 18, 2018)
 
 - Updated: `browserslist` to v3.2.0 (minor update)
