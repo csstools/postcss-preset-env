@@ -29,49 +29,49 @@ module.exports = {
 			}
 		},
 		'basic:nesting': {
-			message: 'supports { stage: false, features: { "css-nesting": true } } usage',
+			message: 'supports { stage: false, features: { "nesting-rules": true } } usage',
 			options: {
 				stage: false,
 				features: {
-					'css-nesting': true
+					'nesting-rules': true
 				}
 			}
 		},
-		'css-variables': {
+		'custom-properties': {
 			message: 'supports { browsers: "ie >= 10" } usage',
 			options: {
 				browsers: 'ie >= 10'
 			}
 		},
-		'css-variables:disabled': {
-			message: 'supports { browsers: "ie >= 10", features: { "css-variables": false } } usage',
+		'custom-properties:disabled': {
+			message: 'supports { browsers: "ie >= 10", features: { "custom-properties": false } } usage',
 			options: {
 				browsers: 'ie >= 10',
 				features: {
-					'css-variables': false
+					'custom-properties': false
 				}
 			}
 		},
 		'insert:before': {
-			message: 'supports { stage: 2, before: { "css-color-modifying-colors": [ require("postcss-simple-vars") ] } } usage',
+			message: 'supports { stage: 2, before: { "color-mod-function": [ require("postcss-simple-vars") ] } } usage',
 			options: {
 				stage: 2,
 				insertBefore: {
-					'css-color-modifying-colors': [
+					'color-mod-function': [
 						require('postcss-simple-vars')
 					]
 				}
 			}
 		},
 		'insert:after': {
-			message: 'supports { stage: 2, after: { "css-color-modifying-colors": [ require("postcss-simple-vars")() ] } } usage',
+			message: 'supports { stage: 2, after: { "color-mod-function": [ require("postcss-simple-vars")() ] } } usage',
 			options: {
 				stage: 2,
 				insertAfter: {
-					'css-color-modifying-colors': require('postcss-simple-vars')
+					'color-mod-function': require('postcss-simple-vars')
 				},
 				features: {
-					'css-color-modifying-colors': {
+					'color-mod-function': {
 						unresolved: 'warn'
 					}
 				}
@@ -79,14 +79,14 @@ module.exports = {
 			warning: 2
 		},
 		'insert:after:exec': {
-			message: 'supports { stage: 2, after: { "css-color-modifying-colors": require("postcss-simple-vars")() } } usage',
+			message: 'supports { stage: 2, after: { "color-mod-function": require("postcss-simple-vars")() } } usage',
 			options: {
 				stage: 2,
 				insertAfter: {
-					'css-color-modifying-colors': require('postcss-simple-vars')()
+					'color-mod-function': require('postcss-simple-vars')()
 				},
 				features: {
-					'css-color-modifying-colors': {
+					'color-mod-function': {
 						unresolved: 'ignore'
 					}
 				}
@@ -94,16 +94,16 @@ module.exports = {
 			expect: 'insert.after.expect.css'
 		},
 		'insert:after:array': {
-			message: 'supports { stage: 2, after: { "css-color-modifying-colors": [ require("postcss-simple-vars") ] } } usage',
+			message: 'supports { stage: 2, after: { "color-mod-function": [ require("postcss-simple-vars") ] } } usage',
 			options: {
 				stage: 2,
 				insertAfter: {
-					'css-color-modifying-colors': [
+					'color-mod-function': [
 						require('postcss-simple-vars')
 					]
 				},
 				features: {
-					'css-color-modifying-colors': {
+					'color-mod-function': {
 						unresolved: 'ignore'
 					}
 				}

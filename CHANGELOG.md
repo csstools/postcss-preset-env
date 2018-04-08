@@ -1,5 +1,13 @@
 # Changes to PostCSS Preset Env
 
+### 4.0.0 (April 7, 2018)
+
+- Added: `postcss-focus-within`
+- Updated: `postcss-focus-visible` to v3.0.0 (major update)
+- Updated: `caniuse-lite` to v1.0.30000824 (patch update)
+- Updated: `cssdb` to v2.0.0 (major update)
+- Changed: All `specificationId` names to new `id` names for the `cssdb` update.
+
 ### 3.5.0 (April 5, 2018)
 
 - Fixed: `selectors-matches-pseudo` mapping to allow `:matches` polyfilling

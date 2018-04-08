@@ -1,6 +1,6 @@
 {
   "name": "postcss-preset-env",
-  "version": "3.5.0",
+  "version": "4.0.0",
   "description": "Convert modern CSS into something browsers understand",
   "author": "Jonathan Neal <jonathantneal@hotmail.com>",
   "license": "CC0-1.0",
@@ -28,8 +28,8 @@
   "dependencies": {
     "@csstools/postcss-image-set-function": "^1.0.0",
     "browserslist": "^3.2.4",
-    "caniuse-lite": "^1.0.30000823",
-    "cssdb": "^1.6.0",
+    "caniuse-lite": "^1.0.30000824",
+    "cssdb": "^2.0.0",
     "postcss": "^6.0.21",
     "postcss-apply": "^0.9.0",
     "postcss-attribute-case-insensitive": "^2.0.0",
@@ -41,7 +41,8 @@
     "postcss-custom-properties": "^7.0.0",
     "postcss-custom-selectors": "^4.0.1",
     "postcss-dir-pseudo-class": "^3.0.0",
-    "postcss-focus-visible": "^2.0.0",
+    "postcss-focus-visible": "^3.0.0",
+    "postcss-focus-within": "^2.0.0",
     "postcss-font-family-system-ui": "^3.0.0",
     "postcss-font-variant": "^3.0.0",
     "postcss-initial": "^2.0.0",

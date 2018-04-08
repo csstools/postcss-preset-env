@@ -186,10 +186,10 @@ require('postcss-preset-env')({
 ### features
 
 The `features` key determines which CSS features to polyfill based upon their
-unique specification id found at [cssdb]. Pass `true` to enable a feature, and
-pass `false` to disable a feature. Pass an object `{}` to configure options of
-an individual polyfill. Any features not explicitly toggled here will be
-determined by [stage](#stage).
+unique id found at [cssdb]. Pass `true` to enable a feature, and pass `false`
+to disable a feature. Pass an object `{}` to configure options of an individual
+polyfill. Any features not explicitly toggled here will be determined by
+[stage](#stage).
 
 ```js
 require('postcss-preset-env')({

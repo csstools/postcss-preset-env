@@ -2,10 +2,10 @@
 import browserslist from 'browserslist';
 import cssdb from 'cssdb';
 import postcss from 'postcss';
-import plugins from './lib/plugins-by-specification-id';
+import plugins from './lib/plugins-by-id';
 import getTransformedInsertions from './lib/get-transformed-insertions';
 import getUnsupportedBrowsersByFeature from './lib/get-unsupported-browsers-by-feature';
-import specificationIdsByExecutionOrder from './lib/specification-ids-by-execution-order';
+import idsByExecutionOrder from './lib/ids-by-execution-order';
 
 // plugin
 export default postcss.plugin('postcss-preset-env', opts => {
@@ -28,10 +28,10 @@ export default postcss.plugin('postcss-preset-env', opts => {
 		getTransformedInsertions(insertAfter, 'insertAfter')
 	).filter(
 		// inserted features or features with an available postcss plugin
-		feature => feature.insertBefore || feature.specificationId in plugins
+		feature => feature.insertBefore || feature.id in plugins
 	).sort(
 		// features sorted by execution order and then insertion order
-		(a, b) => specificationIdsByExecutionOrder.indexOf(a.specificationId) - specificationIdsByExecutionOrder.indexOf(b.specificationId) || (a.insertBefore ? -1 : b.insertBefore ? 1 : 0) || (a.insertAfter ? 1 : b.insertAfter ? -1 : 0)
+		(a, b) => idsByExecutionOrder.indexOf(a.id) - idsByExecutionOrder.indexOf(b.id) || (a.insertBefore ? -1 : b.insertBefore ? 1 : 0) || (a.insertAfter ? 1 : b.insertAfter ? -1 : 0)
 	).map(
 		// polyfillable features as an object
 		feature => {
@@ -39,33 +39,33 @@ export default postcss.plugin('postcss-preset-env', opts => {
 			const unsupportedBrowsers = getUnsupportedBrowsersByFeature(feature.caniuse);
 
 			return feature.insertBefore || feature.insertAfter ? {
-				browsers:        unsupportedBrowsers,
-				plugin:          feature.plugin,
-				specificationId: `${feature.insertBefore ? 'before' : 'after'}-${feature.specificationId}`,
-				stage:           6
+				browsers: unsupportedBrowsers,
+				plugin:   feature.plugin,
+				id:       `${feature.insertBefore ? 'before' : 'after'}-${feature.id}`,
+				stage:    6
 			} : {
-				browsers:        unsupportedBrowsers,
-				plugin:          plugins[feature.specificationId],
-				specificationId: feature.specificationId,
-				stage:           feature.stage
+				browsers: unsupportedBrowsers,
+				plugin:   plugins[feature.id],
+				id:       feature.id,
+				stage:    feature.stage
 			};
 		}
 	);
 
 	// staged features (those at or above the selected stage)
 	const stagedFeatures = polyfillableFeatures.filter(
-		feature => feature.specificationId in features
-			? features[feature.specificationId]
+		feature => feature.id in features
+			? features[feature.id]
 		: feature.stage >= stage
 	).map(
 		feature => ({
 			browsers: feature.browsers,
 			plugin: typeof feature.plugin.process === 'function'
-				? features[feature.specificationId] === true
+				? features[feature.id] === true
 					? feature.plugin()
-				: feature.plugin(features[feature.specificationId])
+				: feature.plugin(features[feature.id])
 			: feature.plugin,
-			specificationId: feature.specificationId
+			id: feature.id
 		})
 	);
 

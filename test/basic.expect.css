@@ -1,27 +1,212 @@
-[dir="ltr"] test-selectors-dir-pseudo {
-	order: 1;
+:root {
+	--order: 1;
 }
 
-test-css-nesting {
-	& {
-		order: 2;
+.test-custom-properties {
+	order: 1;
+	order: var(--order);
+}
+
+.test-image-set-function {
+	background-image: url(img/test.png);
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+
+.test-image-set-function {
+	background-image: url(img/test-2x.png);
+}
+}
+
+.test-image-set-function {
+	order: 2;
+}
+
+.test-logical-properties-and-values {
+	[dir="ltr"] & {
+	margin: 1px 4px 3px 2px;
+	}
+	[dir="rtl"] & {
+	margin: 1px 2px 3px 4px;
+	}
+	order: 3;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+.test-nesting-rules {
+	order: 4;
+
+	& p {
+		order: 5;
+	}
+
+	order: 6;
+}
+
+@custom-media --narrow-window (max-width: 30em);
+
+@media (--narrow-window) {
+	.test-custom-media-queries {
+		order: 7;
 	}
 }
 
-test-css-color-valdef-color-rebeccapurple {
+@media (min-width: 480px) and (max-width: 767px) {
+	.test-media-query-ranges {
+		order: 8;
+	}
+}
+
+@custom-selector :--heading h1, h2, h3, h4, h5, h6
+
+.test-custom-selectors:--heading {
+	order: 9;
+}
+
+.test-case-insensitive-attributes[frame=hsides],.test-case-insensitive-attributes[frame=Hsides],.test-case-insensitive-attributes[frame=hSides],.test-case-insensitive-attributes[frame=HSides],.test-case-insensitive-attributes[frame=hsIdes],.test-case-insensitive-attributes[frame=HsIdes],.test-case-insensitive-attributes[frame=hSIdes],.test-case-insensitive-attributes[frame=HSIdes],.test-case-insensitive-attributes[frame=hsiDes],.test-case-insensitive-attributes[frame=HsiDes],.test-case-insensitive-attributes[frame=hSiDes],.test-case-insensitive-attributes[frame=HSiDes],.test-case-insensitive-attributes[frame=hsIDes],.test-case-insensitive-attributes[frame=HsIDes],.test-case-insensitive-attributes[frame=hSIDes],.test-case-insensitive-attributes[frame=HSIDes],.test-case-insensitive-attributes[frame=hsidEs],.test-case-insensitive-attributes[frame=HsidEs],.test-case-insensitive-attributes[frame=hSidEs],.test-case-insensitive-attributes[frame=HSidEs],.test-case-insensitive-attributes[frame=hsIdEs],.test-case-insensitive-attributes[frame=HsIdEs],.test-case-insensitive-attributes[frame=hSIdEs],.test-case-insensitive-attributes[frame=HSIdEs],.test-case-insensitive-attributes[frame=hsiDEs],.test-case-insensitive-attributes[frame=HsiDEs],.test-case-insensitive-attributes[frame=hSiDEs],.test-case-insensitive-attributes[frame=HSiDEs],.test-case-insensitive-attributes[frame=hsIDEs],.test-case-insensitive-attributes[frame=HsIDEs],.test-case-insensitive-attributes[frame=hSIDEs],.test-case-insensitive-attributes[frame=HSIDEs],.test-case-insensitive-attributes[frame=hsideS],.test-case-insensitive-attributes[frame=HsideS],.test-case-insensitive-attributes[frame=hSideS],.test-case-insensitive-attributes[frame=HSideS],.test-case-insensitive-attributes[frame=hsIdeS],.test-case-insensitive-attributes[frame=HsIdeS],.test-case-insensitive-attributes[frame=hSIdeS],.test-case-insensitive-attributes[frame=HSIdeS],.test-case-insensitive-attributes[frame=hsiDeS],.test-case-insensitive-attributes[frame=HsiDeS],.test-case-insensitive-attributes[frame=hSiDeS],.test-case-insensitive-attributes[frame=HSiDeS],.test-case-insensitive-attributes[frame=hsIDeS],.test-case-insensitive-attributes[frame=HsIDeS],.test-case-insensitive-attributes[frame=hSIDeS],.test-case-insensitive-attributes[frame=HSIDeS],.test-case-insensitive-attributes[frame=hsidES],.test-case-insensitive-attributes[frame=HsidES],.test-case-insensitive-attributes[frame=hSidES],.test-case-insensitive-attributes[frame=HSidES],.test-case-insensitive-attributes[frame=hsIdES],.test-case-insensitive-attributes[frame=HsIdES],.test-case-insensitive-attributes[frame=hSIdES],.test-case-insensitive-attributes[frame=HSIdES],.test-case-insensitive-attributes[frame=hsiDES],.test-case-insensitive-attributes[frame=HsiDES],.test-case-insensitive-attributes[frame=hSiDES],.test-case-insensitive-attributes[frame=HSiDES],.test-case-insensitive-attributes[frame=hsIDES],.test-case-insensitive-attributes[frame=HsIDES],.test-case-insensitive-attributes[frame=hSIDES],.test-case-insensitive-attributes[frame=HSIDES] {
+	order: 10;
+}
+
+.test-rebeccapurple-color {
 	color: #639;
-	order: 3;
+	order: 11;
 }
 
-test.focus-visible {
-	order: 4;
+.test-hexadecimal-alpha-notation {
+	background-color: rgba(243, 243, 243, 0.95294);
+	color: rgba(0, 0, 0, 0.2);
+	order: 12;
 }
 
-test-matches.foo, test-matches.bar {
-	order: 5;
+.test-color-mod-function {
+	color: rgba(0, 0, 0, 0.5);
+	order: 13;
 }
 
-test-break {
-	page-break-inside: avoid;
-	break-inside: avoid;
+.test-system-ui-font-family {
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Droid Sans, Helvetica Neue;
+	order: 14;
+}
+
+.test-font-variant-property {
+	font-feature-settings: "c2sc";
+	font-variant-caps: small-caps;
+	order: 15;
+}
+
+.test-all-property {
+	animation: none 0s ease 0s 1 normal none running;
+	backface-visibility: visible;
+	background: transparent none repeat 0 0 / auto auto padding-box border-box scroll;
+	border: medium none currentColor;
+	border-collapse: separate;
+	border-image: none;
+	border-radius: 0;
+	border-spacing: 0;
+	bottom: auto;
+	box-shadow: none;
+	box-sizing: content-box;
+	caption-side: top;
+	clear: none;
+	clip: auto;
+	color: #000;
+	columns: auto;
+	column-count: auto;
+	column-fill: balance;
+	column-gap: normal;
+	column-rule: medium none currentColor;
+	column-span: 1;
+	column-width: auto;
+	content: normal;
+	counter-increment: none;
+	counter-reset: none;
+	cursor: auto;
+	direction: ltr;
+	display: inline;
+	empty-cells: show;
+	float: none;
+	font-family: serif;
+	font-size: medium;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: normal;
+	font-stretch: normal;
+	line-height: normal;
+	height: auto;
+	hyphens: none;
+	left: auto;
+	letter-spacing: normal;
+	list-style: disc outside none;
+	margin: 0;
+	max-height: none;
+	max-width: none;
+	min-height: 0;
+	min-width: 0;
+	opacity: 1;
+	orphans: 2;
+	outline: medium none invert;
+	overflow: visible;
+	overflow-x: visible;
+	overflow-y: visible;
+	padding: 0;
+	page-break-after: auto;
+	page-break-before: auto;
+	page-break-inside: auto;
+	perspective: none;
+	perspective-origin: 50% 50%;
+	position: static;
+	right: auto;
+	tab-size: 8;
+	table-layout: auto;
+	text-align: left;
+	text-align-last: auto;
+	text-decoration: none;
+	text-indent: 0;
+	text-shadow: none;
+	text-transform: none;
+	top: auto;
+	transform: none;
+	transform-origin: 50% 50% 0;
+	transform-style: flat;
+	transition: none 0s ease 0s;
+	unicode-bidi: normal;
+	vertical-align: baseline;
+	visibility: visible;
+	white-space: normal;
+	widows: 2;
+	width: auto;
+	word-spacing: normal;
+	z-index: auto;
+	all: initial;
+	order: 16;
+}
+
+.test-matches-pseudo-class:first-child, .test-matches-pseudo-class.special {
+	order: 17;
+}
+
+.test-not-pseudo-class:not(:first-child):not(.special) {
+	order: 18;
+}
+
+.test-any-link-pseudo-class:link,.test-any-link-pseudo-class:visited {
+	order: 19;
+}
+
+[dir="rtl"] .test-dir-pseudo-class {
+	order: 20;
+}
+
+.test-overflow-wrap-property {
+	order: 21;
+	word-wrap: break-word;
+}
+
+.test-focus-visible-pseudo-class.focus-visible {
+	order: 22;
+}
+
+.test-focus-visible-pseudo-class:focus-visible {
+	order: 22;
 }
