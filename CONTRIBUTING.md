@@ -66,7 +66,7 @@ If you want to add a new plugin, follow the
 - Ensure the feature exists in [cssdb](https://github.com/jonathantneal/css-db).
 - Add the plugin to the `dependencies` list in [`package.json`](package.json).
 - Add the plugin to
-  [`lib/plugins-by-specification-id.js`](lib/plugins-by-specification-id.js).
+  [`lib/plugins-by-id.js`](lib/plugins-by-id.js).
 
 [already been reported]: issues
 [fork this project]:     fork

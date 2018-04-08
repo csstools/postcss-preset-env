@@ -1,26 +1,108 @@
-test-selectors-dir-pseudo:dir(ltr) {
-	order: 1;
+:root {
+	--order: 1;
 }
 
-test-css-nesting {
-	& {
-		order: 2;
+.test-custom-properties {
+	order: var(--order);
+}
+
+.test-image-set-function {
+	background-image: image-set(url(img/test.png) 1x, url(img/test-2x.png) 2x);
+	order: 2;
+}
+
+.test-logical-properties-and-values {
+	margin: logical 1px 2px 3px 4px;
+	order: 3;
+	padding-block: 5px;
+}
+
+.test-nesting-rules {
+	order: 4;
+
+	& p {
+		order: 5;
+	}
+
+	order: 6;
+}
+
+@custom-media --narrow-window (max-width: 30em);
+
+@media (--narrow-window) {
+	.test-custom-media-queries {
+		order: 7;
 	}
 }
 
-test-css-color-valdef-color-rebeccapurple {
+@media (480px <= width < 768px) {
+	.test-media-query-ranges {
+		order: 8;
+	}
+}
+
+@custom-selector :--heading h1, h2, h3, h4, h5, h6
+
+.test-custom-selectors:--heading {
+	order: 9;
+}
+
+.test-case-insensitive-attributes[frame=hsides i] {
+	order: 10;
+}
+
+.test-rebeccapurple-color {
 	color: rebeccapurple;
-	order: 3;
+	order: 11;
 }
 
-test:focus-visible {
-	order: 4;
+.test-hexadecimal-alpha-notation {
+	background-color: #f3f3f3f3;
+	color: #0003;
+	order: 12;
 }
 
-test-matches:matches(.foo, .bar) {
-	order: 5;
+.test-color-mod-function {
+	color: color-mod(black alpha(50%));
+	order: 13;
 }
 
-test-break {
-	break-inside: avoid;
+.test-system-ui-font-family {
+	font-family: system-ui;
+	order: 14;
+}
+
+.test-font-variant-property {
+	font-variant-caps: small-caps;
+	order: 15;
+}
+
+.test-all-property {
+	all: initial;
+	order: 16;
+}
+
+.test-matches-pseudo-class:matches(:first-child, .special) {
+	order: 17;
+}
+
+.test-not-pseudo-class:not(:first-child, .special) {
+	order: 18;
+}
+
+.test-any-link-pseudo-class:any-link {
+	order: 19;
+}
+
+.test-dir-pseudo-class:dir(rtl) {
+	order: 20;
+}
+
+.test-overflow-wrap-property {
+	order: 21;
+	overflow-wrap: break-word;
+}
+
+.test-focus-visible-pseudo-class:focus-visible {
+	order: 22;
 }
