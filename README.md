@@ -3,7 +3,7 @@
 [![NPM Version][npm-img]][npm-url]
 [![Linux Build Status][cli-img]][cli-url]
 [![Windows Build Status][win-img]][win-url]
-[![Gitter Chat][git-img]][git-url]
+[![Support Chat][git-img]][git-url]
 
 [PostCSS Preset Env] lets you convert modern CSS into something most browsers
 can understand, determining the polyfills you need based on your targeted
@@ -234,7 +234,7 @@ require('postcss-preset-env')({
 [win-url]: https://ci.appveyor.com/project/jonathantneal/postcss-preset-env
 [win-img]: https://img.shields.io/appveyor/ci/jonathantneal/postcss-preset-env.svg
 [git-url]: https://gitter.im/postcss/postcss
-[git-img]: https://img.shields.io/badge/chat-gitter-blue.svg
+[git-img]: https://img.shields.io/badge/support-chat-blue.svg
 
 [PostCSS Preset Env]: https://github.com/jonathantneal/postcss-preset-env
 [PostCSS]: https://github.com/postcss/postcss
