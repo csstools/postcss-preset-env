@@ -1,6 +1,6 @@
 {
   "name": "postcss-preset-env",
-  "version": "4.0.0",
+  "version": "4.1.0",
   "description": "Convert modern CSS into something browsers understand",
   "author": "Jonathan Neal <jonathantneal@hotmail.com>",
   "license": "CC0-1.0",
@@ -17,8 +17,7 @@
   "scripts": {
     "prepublishOnly": "npm test",
     "pretest": "rollup -c .rollup.js --silent",
-    "test": "echo 'Running tests...'; npm run test:ec && npm run test:js && npm run test:tape",
-    "test:ec": "echint --ignore index.*.js test",
+    "test": "echo 'Running tests...'; npm run test:js && npm run test:tape",
     "test:js": "eslint *.js lib/*.js --cache --ignore-path .gitignore --quiet",
     "test:tape": "postcss-tape"
   },
@@ -27,11 +26,11 @@
   },
   "dependencies": {
     "@csstools/postcss-image-set-function": "^1.0.0",
-    "browserslist": "^3.2.4",
-    "caniuse-lite": "^1.0.30000824",
+    "browserslist": "^3.2.5",
+    "caniuse-lite": "^1.0.30000830",
     "cssdb": "^2.0.0",
     "postcss": "^6.0.21",
-    "postcss-apply": "^0.9.0",
+    "postcss-apply": "^0.10.0",
     "postcss-attribute-case-insensitive": "^2.0.0",
     "postcss-color-hex-alpha": "^3.0.0",
     "postcss-color-mod-function": "^2.4.2",
@@ -48,7 +47,7 @@
     "postcss-initial": "^2.0.0",
     "postcss-logical": "^1.1.1",
     "postcss-media-minmax": "^3.0.0",
-    "postcss-nesting": "^4.2.1",
+    "postcss-nesting": "^5.0.0",
     "postcss-page-break": "^1.0.0",
     "postcss-pseudo-class-any-link": "^4.0.0",
     "postcss-replace-overflow-wrap": "^2.0.0",
@@ -57,16 +56,15 @@
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
-    "babel-eslint": "^8.2.2",
+    "babel-eslint": "^8.2.3",
     "babel-preset-env": "^1.6.1",
-    "echint": "^4.0.1",
     "eslint": "^4.19.1",
     "eslint-config-dev": "^2.0.0",
     "postcss-simple-vars": "^4.1.0",
     "postcss-tape": "^2.2.0",
     "pre-commit": "^1.2.2",
-    "rollup": "^0.57.1",
-    "rollup-plugin-babel": "^3.0.3"
+    "rollup": "^0.58.2",
+    "rollup-plugin-babel": "^3.0.4"
   },
   "eslintConfig": {
     "extends": "dev",

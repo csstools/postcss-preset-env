@@ -1,7 +1,7 @@
-# PostCSS Preset Env [<img src="https://postcss.github.io/postcss/logo.svg" alt="PostCSS Logo" width="90" height="90" align="right">][postcss]
+# PostCSS Preset Env [<img src="https://postcss.github.io/postcss/logo.svg" alt="PostCSS" width="90" height="90" align="right">][PostCSS]
 
 [![NPM Version][npm-img]][npm-url]
-[![Linux Build Status][cli-img]][cli-url]
+[![Build Status][cli-img]][cli-url]
 [![Windows Build Status][win-img]][win-url]
 [![Support Chat][git-img]][git-url]
 
@@ -13,7 +13,7 @@ browsers or runtime environments.
 npm install postcss-preset-env
 ```
 
-```css
+```pcss
 @custom-media --viewport-medium (width <= 50rem);
 @custom-selector :--heading h1, h2, h3, h4, h5, h6;
 
@@ -82,14 +82,14 @@ a:hover {
 }
 ```
 
-Without any configuration options, [postcss-preset-env] enables **stage 3**
+Without any configuration options, [PostCSS Preset Env] enables **stage 3**
 features and supports all browsers.
 
 ## Usage
 
 Add [PostCSS Preset Env] to your build tool:
 
-```sh
+```bash
 npm install postcss-preset-env --save-dev
 ```
 
@@ -98,67 +98,107 @@ npm install postcss-preset-env --save-dev
 Use [PostCSS Preset Env] to process your CSS:
 
 ```js
-require('postcss-preset-env').process(YOUR_CSS);
+import postcssPresetEnv from 'postcss-preset-env';
+
+postcssPresetEnv.process(YOUR_CSS);
 ```
 
 #### PostCSS
 
 Add [PostCSS] to your build tool:
 
-```sh
+```bash
 npm install postcss --save-dev
 ```
 
 Use [PostCSS Preset Env] as a plugin:
 
 ```js
+import postcss from 'gulp-postcss';
+import postcssPresetEnv from 'postcss-preset-env';
+
 postcss([
-  require('postcss-preset-env')()
+  postcssPresetEnv(/* options */)
 ]).process(YOUR_CSS);
+```
+
+#### Webpack
+
+Add [PostCSS Loader] to your build tool:
+
+```bash
+npm install postcss-loader --save-dev
+```
+
+Use [PostCSS Preset Env] in your Webpack configuration:
+
+```js
+import postcssPresetEnv from 'postcss-preset-env';
+
+export default {
+  module: {
+    rules: [
+      {
+        test: /\.css$/,
+        use: [
+          'style-loader',
+          { loader: 'css-loader', options: { importLoaders: 1 } },
+          { loader: 'postcss-loader', options: {
+            ident: 'postcss',
+            plugins: () => [
+              postcssPresetEnv(/* options */)
+            ]
+          } }
+        ]
+      }
+    ]
+  }
+}
 ```
 
 #### Gulp
 
 Add [Gulp PostCSS] to your build tool:
 
-```sh
+```bash
 npm install gulp-postcss --save-dev
 ```
 
 Use [PostCSS Preset Env] in your Gulpfile:
 
 ```js
-var postcss = require('gulp-postcss');
+import postcss from 'gulp-postcss';
+import postcssPresetEnv from 'postcss-preset-env';
 
-gulp.task('css', function () {
-  return gulp.src('./src/*.css').pipe(
-    postcss([
-      require('postcss-preset-env')()
-    ])
-  ).pipe(
-    gulp.dest('.')
-  );
-});
+gulp.task('css', () => gulp.src('./src/*.css').pipe(
+  postcss([
+    postcssPresetEnv(/* options */)
+  ])
+).pipe(
+  gulp.dest('.')
+));
 ```
 
 #### Grunt
 
 Add [Grunt PostCSS] to your build tool:
 
-```sh
+```bash
 npm install grunt-postcss --save-dev
 ```
 
 Use [PostCSS Preset Env] in your Gruntfile:
 
 ```js
+import postcssPresetEnv from 'postcss-preset-env';
+
 grunt.loadNpmTasks('grunt-postcss');
 
 grunt.initConfig({
   postcss: {
     options: {
       use: [
-        require('postcss-preset-env')()
+       postcssPresetEnv(/* options */)
       ]
     },
     dist: {
@@ -178,7 +218,7 @@ The stages are 0 through 5. You can specify `false` to ignore all stages and
 rely on [features](#features) exclusively.
 
 ```js
-require('postcss-preset-env')({
+postcssPresetEnv({
   stage: 0
 })
 ```
@@ -192,7 +232,7 @@ polyfill. Any features not explicitly toggled here will be determined by
 [stage](#stage).
 
 ```js
-require('postcss-preset-env')({
+postcssPresetEnv({
   stage: false,
   features: [ 'css-nesting' ]
 })
@@ -202,12 +242,12 @@ require('postcss-preset-env')({
 
 The `browsers` key determines the browsers to support, which will enable or
 disable polyfills based upon their support matrix found at [caniuse].
-By default, [postcss-preset-env] will inherit any existing browserslist config,
+By default, [PostCSS Preset Env] will inherit any existing browserslist config,
 .browserslistrc config, browserslist section in package.json, or browserslist
 environment variables.
 
 ```js
-require('postcss-preset-env')({
+postcssPresetEnv({
   browsers: 'last 2 versions'
 })
 ```
@@ -216,30 +256,32 @@ require('postcss-preset-env')({
 
 The `insertBefore` and `insertAfter` keys allow you to insert other PostCSS
 plugins along the chain. This is highly valuable if you are also using sugary
-PostCSS plugins that must execute between plugins within postcss-preset-env.
+PostCSS plugins that must execute between plugins within [PostCSS Preset Env].
 Both `insertBefore` and `insertAfter` support chaining one or multiple plugins.
 
 ```js
-require('postcss-preset-env')({
+import postcssSimpleVars from 'postcss-simple-vars';
+
+postcssPresetEnv({
   insertBefore: {
-    'css-color-modifying-colors': require('postcss-simple-vars')
+    'css-color-modifying-colors': postcssSimpleVars
   }
 })
 ```
 
-[npm-url]: https://www.npmjs.com/package/postcss-preset-env
-[npm-img]: https://img.shields.io/npm/v/postcss-preset-env.svg
-[cli-url]: https://travis-ci.org/jonathantneal/postcss-preset-env
 [cli-img]: https://img.shields.io/travis/jonathantneal/postcss-preset-env.svg
-[win-url]: https://ci.appveyor.com/project/jonathantneal/postcss-preset-env
-[win-img]: https://img.shields.io/appveyor/ci/jonathantneal/postcss-preset-env.svg
-[git-url]: https://gitter.im/postcss/postcss
+[cli-url]: https://travis-ci.org/jonathantneal/postcss-preset-env
 [git-img]: https://img.shields.io/badge/support-chat-blue.svg
+[git-url]: https://gitter.im/postcss/postcss
+[npm-img]: https://img.shields.io/npm/v/postcss-preset-env.svg
+[npm-url]: https://www.npmjs.com/package/postcss-preset-env
+[win-img]: https://img.shields.io/appveyor/ci/jonathantneal/postcss-preset-env.svg
+[win-url]: https://ci.appveyor.com/project/jonathantneal/postcss-preset-env
 
-[PostCSS Preset Env]: https://github.com/jonathantneal/postcss-preset-env
+[caniuse]: https://caniuse.com/
+[cssdb]: https://jonathantneal.github.io/css-db/
 [PostCSS]: https://github.com/postcss/postcss
+[PostCSS Preset Env]: https://github.com/jonathantneal/postcss-preset-env
+[PostCSS Loader]: https://github.com/postcss/postcss-loader
 [Gulp PostCSS]: https://github.com/postcss/gulp-postcss
 [Grunt PostCSS]: https://github.com/nDmitry/grunt-postcss
-[cssdb]: https://jonathantneal.github.io/css-db/
-[caniuse]: https://caniuse.com/
-[postcss-preset-env]: https://github.com/jonathantneal/postcss-preset-env/

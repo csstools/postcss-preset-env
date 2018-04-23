@@ -1,5 +1,12 @@
 # Changes to PostCSS Preset Env
 
+### 4.1.0 (April 23, 2018)
+
+- Updated: `browserslist` to v3.2.5 (patch update)
+- Updated: `caniuse-lite` to v1.0.30000830 (patch update)
+- Updated: `postcss-apply` to v0.10.0 (minor update)
+- Updated: `postcss-nesting` to v5.0.0 (major update, non-breaking for this project)
+
 ### 4.0.0 (April 7, 2018)
 
 - Added: `postcss-focus-within`
