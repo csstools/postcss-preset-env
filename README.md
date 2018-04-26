@@ -82,8 +82,11 @@ a:hover {
 }
 ```
 
-Without any configuration options, [PostCSS Preset Env] enables **stage 3**
-features and supports all browsers.
+Without any configuration options, [PostCSS Preset Env] enables **Stage 3**
+features and supports **all** browsers.
+
+[![Transform with Preset Env][readme-transform-with-preset-env-img]][readme-transform-with-preset-env-url]
+[![Style with Preset Env][readme-style-with-preset-env-img]][readme-style-with-preset-env-url]
 
 ## Usage
 
@@ -285,3 +288,7 @@ postcssPresetEnv({
 [PostCSS Loader]: https://github.com/postcss/postcss-loader
 [Gulp PostCSS]: https://github.com/postcss/gulp-postcss
 [Grunt PostCSS]: https://github.com/nDmitry/grunt-postcss
+[readme-style-with-preset-env-img]: https://jonathantneal.github.io/postcss-preset-env/readme-style-with-preset-env.svg
+[readme-style-with-preset-env-url]: https://codepen.io/pen?template=OZRovK
+[readme-transform-with-preset-env-img]: https://jonathantneal.github.io/postcss-preset-env/readme-transform-with-preset-env.svg
+[readme-transform-with-preset-env-url]: https://jonathantneal.github.io/postcss-preset-env/
