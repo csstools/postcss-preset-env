@@ -29,7 +29,7 @@
     "caniuse-lite": "^1.0.30000836",
     "cssdb": "^2.2.0",
     "postcss": "^6.0.22",
-    "postcss-attribute-case-insensitive": "^2.0.0",
+    "postcss-attribute-case-insensitive": "^3.0.0",
     "postcss-color-functional-notation": "^1.0.0",
     "postcss-color-hex-alpha": "^3.0.0",
     "postcss-color-mod-function": "^2.4.2",

@@ -10,9 +10,13 @@
 - Updated: `postcss-image-set-function` to v2.0.0 (major update)
 - Updated: `postcss-color-rebeccapurple` to v3.1.0 (minor update)
 - Updated: `postcss-dir-pseudo-class` to v4.0.0 (major update)
+- Updated: `postcss-attribute-case-insensitive` to v3.0.0 (major update)
 - Updated: `postcss` to v6.0.22 (patch update)
 - Updated: `browserslist` to v3.2.6 (patch update)
 - Updated: `caniuse-lite` to v1.0.30000835 (patch update)
+
+All plugins now conform to the latest stable releases of `postcss-value-parser`
+v1.5.0 and `postcss-selector-parser` v4.0.0.
 
 ### 4.1.0 (April 23, 2018)
 
