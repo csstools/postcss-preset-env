@@ -6,11 +6,11 @@
 - Added: `postcss-gap-properties`
 - Added: `postcss-overflow-shorthand`
 - Updated: `cssdb` to v2.2.0 (minor update)
+- Updated: `postcss-attribute-case-insensitive` to v3.0.0 (major update)
 - Updated: `postcss-pseudo-class-any-link` to v5.0.0 (major update)
 - Updated: `postcss-image-set-function` to v2.0.0 (major update)
-- Updated: `postcss-color-rebeccapurple` to v3.1.0 (minor update)
 - Updated: `postcss-dir-pseudo-class` to v4.0.0 (major update)
-- Updated: `postcss-attribute-case-insensitive` to v3.0.0 (major update)
+- Updated: `postcss-color-rebeccapurple` to v3.1.0 (minor update)
 - Updated: `postcss` to v6.0.22 (patch update)
 - Updated: `browserslist` to v3.2.6 (patch update)
 - Updated: `caniuse-lite` to v1.0.30000835 (patch update)
