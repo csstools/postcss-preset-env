@@ -45,7 +45,7 @@
     "postcss-font-family-system-ui": "^3.0.0",
     "postcss-font-variant": "^3.0.0",
     "postcss-gap-properties": "^1.0.0",
-    "postcss-image-set-function": "^1.0.0",
+    "postcss-image-set-function": "^2.0.0",
     "postcss-initial": "^2.0.0",
     "postcss-logical": "^1.1.1",
     "postcss-media-minmax": "^3.0.0",

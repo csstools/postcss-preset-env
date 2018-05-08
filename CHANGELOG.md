@@ -1,5 +1,8 @@
 # Changes to PostCSS Preset Env
 
+- Updated: `postcss-image-set-function` to v2.0.0
+  (major update, non-breaking for this project)
+
 ### 4.1.0 (April 23, 2018)
 
 - Updated: `browserslist` to v3.2.5 (patch update)
