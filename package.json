@@ -26,7 +26,7 @@
   },
   "dependencies": {
     "browserslist": "^3.2.6",
-    "caniuse-lite": "^1.0.30000835",
+    "caniuse-lite": "^1.0.30000836",
     "cssdb": "^2.2.0",
     "postcss": "^6.0.22",
     "postcss-attribute-case-insensitive": "^2.0.0",
@@ -49,7 +49,7 @@
     "postcss-logical": "^1.1.1",
     "postcss-media-minmax": "^3.0.0",
     "postcss-nesting": "^5.0.0",
-    "postcss-overflow-shorthand": "^1.0.0",
+    "postcss-overflow-shorthand": "^1.0.1",
     "postcss-page-break": "^1.0.0",
     "postcss-pseudo-class-any-link": "^5.0.0",
     "postcss-replace-overflow-wrap": "^2.0.0",

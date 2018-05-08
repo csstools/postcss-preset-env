@@ -1,4 +1,3 @@
-// tooling
 import browserslist from 'browserslist';
 import cssdb from 'cssdb';
 import postcss from 'postcss';
@@ -7,7 +6,6 @@ import getTransformedInsertions from './lib/get-transformed-insertions';
 import getUnsupportedBrowsersByFeature from './lib/get-unsupported-browsers-by-feature';
 import idsByExecutionOrder from './lib/ids-by-execution-order';
 
-// plugin
 export default postcss.plugin('postcss-preset-env', opts => {
 	// initialize options
 	const features = Object(Object(opts).features);
