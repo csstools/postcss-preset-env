@@ -116,6 +116,7 @@
 	columns: auto;
 	column-count: auto;
 	column-fill: balance;
+	grid-column-gap: normal;
 	column-gap: normal;
 	column-rule: medium none currentColor;
 	column-span: 1;
@@ -193,6 +194,10 @@
 }
 
 .test-any-link-pseudo-class:link,.test-any-link-pseudo-class:visited {
+	order: 20;
+}
+
+.test-any-link-pseudo-class:any-link {
 	order: 20;
 }
 
