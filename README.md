@@ -282,7 +282,7 @@ postcssPresetEnv({
 [win-url]: https://ci.appveyor.com/project/jonathantneal/postcss-preset-env
 
 [caniuse]: https://caniuse.com/
-[cssdb]: https://jonathantneal.github.io/css-db/
+[cssdb]: https://cssdb.org/
 [PostCSS]: https://github.com/postcss/postcss
 [PostCSS Preset Env]: https://github.com/jonathantneal/postcss-preset-env
 [PostCSS Loader]: https://github.com/postcss/postcss-loader
