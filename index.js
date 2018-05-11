@@ -14,9 +14,9 @@ export default postcss.plugin('postcss-preset-env', opts => {
 	const browsers = Object(opts).browsers;
 	const stage = 'stage' in Object(opts)
 		? opts.stage === false
-			? 6
+			? 5
 		: parseInt(opts.stage) || 0
-	: 3;
+	: 2;
 
 	// polyfillable features (those with an available postcss plugin)
 	const polyfillableFeatures = cssdb.concat(

@@ -82,7 +82,7 @@ a:hover {
 }
 ```
 
-Without any configuration options, [PostCSS Preset Env] enables **Stage 3**
+Without any configuration options, [PostCSS Preset Env] enables **Stage 2**
 features and supports **all** browsers.
 
 [![Transform with Preset Env][readme-transform-with-preset-env-img]][readme-transform-with-preset-env-url]

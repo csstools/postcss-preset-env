@@ -15,17 +15,17 @@ module.exports = {
 				browsers: 'chrome >= 38'
 			}
 		},
-		'basic:stage1': {
-			message: 'supports { stage: 1 } usage',
+		'basic:stage0': {
+			message: 'supports { stage: 0 } usage',
 			options: {
-				stage: 1
+				stage: 0
 			}
 		},
-		'basic:stage1-ff49': {
-			message: 'supports { browsers: "ff >= 49", stage: 1 } usage',
+		'basic:stage0-ff49': {
+			message: 'supports { browsers: "ff >= 49", stage: 0 } usage',
 			options: {
 				browsers: 'ff >= 49',
-				stage: 1
+				stage: 0
 			}
 		},
 		'basic:nesting': {
@@ -53,9 +53,9 @@ module.exports = {
 			}
 		},
 		'insert:before': {
-			message: 'supports { stage: 2, before: { "color-mod-function": [ require("postcss-simple-vars") ] } } usage',
+			message: 'supports { stage: 1, before: { "color-mod-function": [ require("postcss-simple-vars") ] } } usage',
 			options: {
-				stage: 2,
+				stage: 1,
 				insertBefore: {
 					'color-mod-function': [
 						require('postcss-simple-vars')
@@ -64,9 +64,9 @@ module.exports = {
 			}
 		},
 		'insert:after': {
-			message: 'supports { stage: 2, after: { "color-mod-function": [ require("postcss-simple-vars")() ] } } usage',
+			message: 'supports { stage: 1, after: { "color-mod-function": [ require("postcss-simple-vars")() ] } } usage',
 			options: {
-				stage: 2,
+				stage: 1,
 				insertAfter: {
 					'color-mod-function': require('postcss-simple-vars')
 				},
@@ -94,9 +94,9 @@ module.exports = {
 			expect: 'insert.after.expect.css'
 		},
 		'insert:after:array': {
-			message: 'supports { stage: 2, after: { "color-mod-function": [ require("postcss-simple-vars") ] } } usage',
+			message: 'supports { stage: 1, after: { "color-mod-function": [ require("postcss-simple-vars") ] } } usage',
 			options: {
-				stage: 2,
+				stage: 1,
 				insertAfter: {
 					'color-mod-function': [
 						require('postcss-simple-vars')

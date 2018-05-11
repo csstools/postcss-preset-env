@@ -27,7 +27,7 @@
   "dependencies": {
     "browserslist": "^3.2.7",
     "caniuse-lite": "^1.0.30000839",
-    "cssdb": "^2.2.0",
+    "cssdb": "^3.0.0",
     "postcss": "^6.0.22",
     "postcss-attribute-case-insensitive": "^3.0.0",
     "postcss-color-functional-notation": "^1.0.0",

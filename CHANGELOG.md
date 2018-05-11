@@ -5,7 +5,8 @@
 - Added: `postcss-place`
 - Added: `postcss-gap-properties`
 - Added: `postcss-overflow-shorthand`
-- Updated: `cssdb` to v2.2.0 (minor update)
+- Updated: `cssdb` to v3.0.0 (major update)
+- Updated: In conformance with cssdb v3, the default stage is now 2
 - Updated: `postcss-attribute-case-insensitive` to v3.0.0 (major update)
 - Updated: `postcss-pseudo-class-any-link` to v5.0.0 (major update)
 - Updated: `postcss-image-set-function` to v2.0.0 (major update)
