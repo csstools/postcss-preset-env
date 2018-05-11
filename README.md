@@ -82,7 +82,7 @@ a:hover {
 }
 ```
 
-Without any configuration options, [PostCSS Preset Env] enables **Stage 3**
+Without any configuration options, [PostCSS Preset Env] enables **Stage 2**
 features and supports **all** browsers.
 
 [![Transform with Preset Env][readme-transform-with-preset-env-img]][readme-transform-with-preset-env-url]
@@ -272,8 +272,8 @@ postcssPresetEnv({
 })
 ```
 
-[cli-img]: https://img.shields.io/travis/jonathantneal/postcss-preset-env.svg
-[cli-url]: https://travis-ci.org/jonathantneal/postcss-preset-env
+[cli-img]: https://img.shields.io/travis/csstools/postcss-preset-env.svg
+[cli-url]: https://travis-ci.org/csstools/postcss-preset-env
 [git-img]: https://img.shields.io/badge/support-chat-blue.svg
 [git-url]: https://gitter.im/postcss/postcss
 [npm-img]: https://img.shields.io/npm/v/postcss-preset-env.svg
@@ -282,13 +282,13 @@ postcssPresetEnv({
 [win-url]: https://ci.appveyor.com/project/jonathantneal/postcss-preset-env
 
 [caniuse]: https://caniuse.com/
-[cssdb]: https://jonathantneal.github.io/css-db/
+[cssdb]: https://cssdb.org/
 [PostCSS]: https://github.com/postcss/postcss
-[PostCSS Preset Env]: https://github.com/jonathantneal/postcss-preset-env
+[PostCSS Preset Env]: https://github.com/csstools/postcss-preset-env
 [PostCSS Loader]: https://github.com/postcss/postcss-loader
 [Gulp PostCSS]: https://github.com/postcss/gulp-postcss
 [Grunt PostCSS]: https://github.com/nDmitry/grunt-postcss
-[readme-style-with-preset-env-img]: https://jonathantneal.github.io/postcss-preset-env/readme-style-with-preset-env.svg
+[readme-style-with-preset-env-img]: https://csstools.github.io/postcss-preset-env/readme-style-with-preset-env.svg
 [readme-style-with-preset-env-url]: https://codepen.io/pen?template=OZRovK
-[readme-transform-with-preset-env-img]: https://jonathantneal.github.io/postcss-preset-env/readme-transform-with-preset-env.svg
-[readme-transform-with-preset-env-url]: https://jonathantneal.github.io/postcss-preset-env/
+[readme-transform-with-preset-env-img]: https://csstools.github.io/postcss-preset-env/readme-transform-with-preset-env.svg
+[readme-transform-with-preset-env-url]: https://csstools.github.io/postcss-preset-env/

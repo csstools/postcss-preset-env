@@ -1,4 +1,4 @@
-// tooling
+import autoprefixer from 'autoprefixer'
 import browserslist from 'browserslist';
 import cssdb from 'cssdb';
 import postcss from 'postcss';
@@ -7,7 +7,6 @@ import getTransformedInsertions from './lib/get-transformed-insertions';
 import getUnsupportedBrowsersByFeature from './lib/get-unsupported-browsers-by-feature';
 import idsByExecutionOrder from './lib/ids-by-execution-order';
 
-// plugin
 export default postcss.plugin('postcss-preset-env', opts => {
 	// initialize options
 	const features = Object(Object(opts).features);
@@ -16,9 +15,11 @@ export default postcss.plugin('postcss-preset-env', opts => {
 	const browsers = Object(opts).browsers;
 	const stage = 'stage' in Object(opts)
 		? opts.stage === false
-			? 6
+			? 5
 		: parseInt(opts.stage) || 0
-	: 3;
+	: 2;
+
+	const stagedAutoprefixer = autoprefixer({ browsers });
 
 	// polyfillable features (those with an available postcss plugin)
 	const polyfillableFeatures = cssdb.concat(
@@ -93,6 +94,8 @@ export default postcss.plugin('postcss-preset-env', opts => {
 				() => feature.plugin(result.root, result)
 			),
 			Promise.resolve()
+		).then(
+			() => stagedAutoprefixer(result.root, result)
 		);
 
 		return polyfills;
