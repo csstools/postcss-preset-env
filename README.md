@@ -215,10 +215,9 @@ grunt.initConfig({
 
 ### stage
 
-The `stage` key determines which CSS features to polyfill, based upon their
-position in the process of becoming implemented web standards found at [cssdb].
-The stages are 0 through 5. You can specify `false` to ignore all stages and
-rely on [features](#features) exclusively.
+The `stage` option determines which CSS features to polyfill, based upon their
+stability in the process of becoming implemented web standards. The stages are
+0 through 4.
 
 ```js
 postcssPresetEnv({
@@ -226,28 +225,39 @@ postcssPresetEnv({
 })
 ```
 
+Setting the `stage` option to `false` will disable all of the polyfills. Doing
+this would only be useful if you intended to exclusively use the
+[`features`](#features) option.
+
 ### features
 
-The `features` key determines which CSS features to polyfill based upon their
-unique id found at [cssdb]. Pass `true` to enable a feature, and pass `false`
-to disable a feature. Pass an object `{}` to configure options of an individual
-polyfill. Any features not explicitly toggled here will be determined by
-[stage](#stage).
+The `features` option enables or disables specific polyfills. Passing `true` to
+a specific feature id will enable its polyfill, while passing `false` will
+disable it. Passing an object `{}` to a specific feature id will enable and
+configure it.
 
 ```js
 postcssPresetEnv({
-  stage: false,
-  features: [ 'css-nesting' ]
+  stage: 3,
+  features: [ 'nesting-rules' ]
 })
 ```
 
+Any polyfills not explicitly enabled or disabled through `features` are
+determined by the [`stage`](#stage) option.
+
 ### browsers
 
-The `browsers` key determines the browsers to support, which will enable or
-disable polyfills based upon their support matrix found at [caniuse].
-By default, [PostCSS Preset Env] will inherit any existing browserslist config,
-.browserslistrc config, browserslist section in package.json, or browserslist
-environment variables.
+The `browsers` option determines which browsers are being supported, which is
+used to further enable or disable polyfills, based upon their support matrix
+found at [caniuse].
+
+[PostCSS Preset Env] supports any standard [browserslist] configuration, which
+includes a `.browserslistrc` file, a `browserslist` key in `package.json`, or
+`browserslist` environment variables.
+
+The `browsers` option should only be used when a standard browserslist
+configuration is not available.
 
 ```js
 postcssPresetEnv({
@@ -258,8 +268,8 @@ postcssPresetEnv({
 ### insertBefore / insertAfter
 
 The `insertBefore` and `insertAfter` keys allow you to insert other PostCSS
-plugins along the chain. This is highly valuable if you are also using sugary
-PostCSS plugins that must execute between plugins within [PostCSS Preset Env].
+plugins into the chain. This is only useful if you are also using sugary
+PostCSS plugins that must execute before or after certain polyfills.
 Both `insertBefore` and `insertAfter` support chaining one or multiple plugins.
 
 ```js
@@ -267,7 +277,7 @@ import postcssSimpleVars from 'postcss-simple-vars';
 
 postcssPresetEnv({
   insertBefore: {
-    'css-color-modifying-colors': postcssSimpleVars
+    'all-property': postcssSimpleVars
   }
 })
 ```
@@ -281,6 +291,7 @@ postcssPresetEnv({
 [win-img]: https://img.shields.io/appveyor/ci/jonathantneal/postcss-preset-env.svg
 [win-url]: https://ci.appveyor.com/project/jonathantneal/postcss-preset-env
 
+[browserslist]: https://github.com/browserslist/browserslist#readme
 [caniuse]: https://caniuse.com/
 [cssdb]: https://cssdb.org/
 [PostCSS]: https://github.com/postcss/postcss
