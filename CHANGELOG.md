@@ -2,6 +2,7 @@
 
 - Added: `postcss-color-functional-notation`
 - Added: `postcss-env-function`
+- Added: `postcss-lab-function`
 - Added: `postcss-place`
 - Added: `postcss-gap-properties`
 - Added: `postcss-overflow-shorthand`

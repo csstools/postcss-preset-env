@@ -86,15 +86,21 @@
 	order: 14;
 }
 
+.test-lab-function {
+	background-color: rgb(178, 34, 34);
+	color: rgba(178, 34, 34, 0.5);
+	order: 15;
+}
+
 .test-system-ui-font-family {
 	font-family: system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Droid Sans, Helvetica Neue;
-	order: 15;
+	order: 16;
 }
 
 .test-font-variant-property {
 	font-feature-settings: "c2sc";
 	font-variant-caps: small-caps;
-	order: 16;
+	order: 17;
 }
 
 .test-all-property {
@@ -182,38 +188,38 @@
 	word-spacing: normal;
 	z-index: auto;
 	all: initial;
-	order: 17;
-}
-
-.test-matches-pseudo-class:first-child, .test-matches-pseudo-class.special {
 	order: 18;
 }
 
-.test-not-pseudo-class:not(:first-child):not(.special) {
+.test-matches-pseudo-class:first-child, .test-matches-pseudo-class.special {
 	order: 19;
 }
 
+.test-not-pseudo-class:not(:first-child):not(.special) {
+	order: 20;
+}
+
 .test-any-link-pseudo-class:link,.test-any-link-pseudo-class:visited {
-	order: 20;
-}
-
-.test-any-link-pseudo-class:any-link {
-	order: 20;
-}
-
-[dir="rtl"] .test-dir-pseudo-class {
 	order: 21;
 }
 
-.test-overflow-wrap-property {
+.test-any-link-pseudo-class:any-link {
+	order: 21;
+}
+
+[dir="rtl"] .test-dir-pseudo-class {
 	order: 22;
+}
+
+.test-overflow-wrap-property {
+	order: 23;
 	word-wrap: break-word;
 }
 
 .test-focus-visible-pseudo-class.focus-visible {
-	order: 23;
+	order: 24;
 }
 
 .test-focus-visible-pseudo-class:focus-visible {
-	order: 23;
+	order: 24;
 }

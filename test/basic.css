@@ -72,42 +72,48 @@
 	order: 14;
 }
 
+.test-lab-function {
+	background-color: lab(40 56.6 39);
+	color: lch(40 68.8 34.5 / 50%);
+	order: 15;
+}
+
 .test-system-ui-font-family {
 	font-family: system-ui;
-	order: 15;
+	order: 16;
 }
 
 .test-font-variant-property {
 	font-variant-caps: small-caps;
-	order: 16;
+	order: 17;
 }
 
 .test-all-property {
 	all: initial;
-	order: 17;
-}
-
-.test-matches-pseudo-class:matches(:first-child, .special) {
 	order: 18;
 }
 
-.test-not-pseudo-class:not(:first-child, .special) {
+.test-matches-pseudo-class:matches(:first-child, .special) {
 	order: 19;
 }
 
-.test-any-link-pseudo-class:any-link {
+.test-not-pseudo-class:not(:first-child, .special) {
 	order: 20;
 }
 
-.test-dir-pseudo-class:dir(rtl) {
+.test-any-link-pseudo-class:any-link {
 	order: 21;
 }
 
-.test-overflow-wrap-property {
+.test-dir-pseudo-class:dir(rtl) {
 	order: 22;
+}
+
+.test-overflow-wrap-property {
+	order: 23;
 	overflow-wrap: break-word;
 }
 
 .test-focus-visible-pseudo-class:focus-visible {
-	order: 23;
+	order: 24;
 }

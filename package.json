@@ -27,7 +27,7 @@
   "dependencies": {
     "browserslist": "^3.2.7",
     "caniuse-lite": "^1.0.30000839",
-    "cssdb": "^3.0.0",
+    "cssdb": "^3.1.0",
     "postcss": "^6.0.22",
     "postcss-attribute-case-insensitive": "^3.0.0",
     "postcss-color-functional-notation": "^1.0.0",
@@ -46,6 +46,7 @@
     "postcss-gap-properties": "^1.0.0",
     "postcss-image-set-function": "^2.0.0",
     "postcss-initial": "^2.0.0",
+    "postcss-lab-function": "^1.0.0",
     "postcss-logical": "^1.1.1",
     "postcss-media-minmax": "^3.0.0",
     "postcss-nesting": "^5.0.0",
