@@ -7,6 +7,7 @@
 }
 
 .test-image-set-function {
+	background-image: -webkit-image-set(url(img/test.png) 1x, url(img/test-2x.png) 2x);
 	background-image: image-set(url(img/test.png) 1x, url(img/test-2x.png) 2x);
 	order: 2;
 }
@@ -101,6 +102,14 @@
 
 .test-not-pseudo-class:not(:first-child, .special) {
 	order: 20;
+}
+
+.test-any-link-pseudo-class:-webkit-any-link {
+	order: 21;
+}
+
+.test-any-link-pseudo-class:-moz-any-link {
+	order: 21;
 }
 
 .test-any-link-pseudo-class:any-link {

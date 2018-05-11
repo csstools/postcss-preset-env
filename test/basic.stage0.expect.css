@@ -19,6 +19,7 @@
 }
 
 .test-image-set-function {
+	background-image: -webkit-image-set(url(img/test.png) 1x, url(img/test-2x.png) 2x);
 	background-image: image-set(url(img/test.png) 1x, url(img/test-2x.png) 2x);
 	order: 2;
 }
@@ -98,18 +99,22 @@
 }
 
 .test-font-variant-property {
-	font-feature-settings: "c2sc";
+	-webkit-font-feature-settings: "c2sc";
+	        font-feature-settings: "c2sc";
 	font-variant-caps: small-caps;
 	order: 17;
 }
 
 .test-all-property {
-	animation: none 0s ease 0s 1 normal none running;
-	backface-visibility: visible;
+	-webkit-animation: none 0s ease 0s 1 normal none running;
+	        animation: none 0s ease 0s 1 normal none running;
+	-webkit-backface-visibility: visible;
+	        backface-visibility: visible;
 	background: transparent none repeat 0 0 / auto auto padding-box border-box scroll;
 	border: medium none currentColor;
 	border-collapse: separate;
-	border-image: none;
+	-o-border-image: none;
+	   border-image: none;
 	border-radius: 0;
 	border-spacing: 0;
 	bottom: auto;
@@ -119,14 +124,21 @@
 	clear: none;
 	clip: auto;
 	color: #000;
-	columns: auto;
-	column-count: auto;
-	column-fill: balance;
+	-webkit-columns: auto;
+	        columns: auto;
+	-webkit-column-count: auto;
+	        column-count: auto;
+	-webkit-column-fill: balance;
+	        column-fill: balance;
 	grid-column-gap: normal;
-	column-gap: normal;
-	column-rule: medium none currentColor;
-	column-span: 1;
-	column-width: auto;
+	-webkit-column-gap: normal;
+	        column-gap: normal;
+	-webkit-column-rule: medium none currentColor;
+	        column-rule: medium none currentColor;
+	-webkit-column-span: 1;
+	        column-span: 1;
+	-webkit-column-width: auto;
+	        column-width: auto;
 	content: normal;
 	counter-increment: none;
 	counter-reset: none;
@@ -143,7 +155,9 @@
 	font-stretch: normal;
 	line-height: normal;
 	height: auto;
-	hyphens: none;
+	-webkit-hyphens: none;
+	    -ms-hyphens: none;
+	        hyphens: none;
 	left: auto;
 	letter-spacing: normal;
 	list-style: disc outside none;
@@ -162,11 +176,15 @@
 	page-break-after: auto;
 	page-break-before: auto;
 	page-break-inside: auto;
-	perspective: none;
-	perspective-origin: 50% 50%;
+	-webkit-perspective: none;
+	        perspective: none;
+	-webkit-perspective-origin: 50% 50%;
+	        perspective-origin: 50% 50%;
 	position: static;
 	right: auto;
-	tab-size: 8;
+	-moz-tab-size: 8;
+	  -o-tab-size: 8;
+	     tab-size: 8;
 	table-layout: auto;
 	text-align: left;
 	text-align-last: auto;
@@ -175,9 +193,12 @@
 	text-shadow: none;
 	text-transform: none;
 	top: auto;
-	transform: none;
-	transform-origin: 50% 50% 0;
-	transform-style: flat;
+	-webkit-transform: none;
+	        transform: none;
+	-webkit-transform-origin: 50% 50% 0;
+	        transform-origin: 50% 50% 0;
+	-webkit-transform-style: flat;
+	        transform-style: flat;
 	transition: none 0s ease 0s;
 	unicode-bidi: normal;
 	vertical-align: baseline;
@@ -200,6 +221,14 @@
 }
 
 .test-any-link-pseudo-class:link,.test-any-link-pseudo-class:visited {
+	order: 21;
+}
+
+.test-any-link-pseudo-class:-webkit-any-link {
+	order: 21;
+}
+
+.test-any-link-pseudo-class:-moz-any-link {
 	order: 21;
 }
 

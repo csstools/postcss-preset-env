@@ -10,7 +10,7 @@
 	background-image: url(img/test.png);
 }
 
-@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+@media (min-resolution: 192dpi) {
 
 .test-image-set-function {
 	background-image:  url(img/test-2x.png);
@@ -110,6 +110,10 @@
 
 .test-not-pseudo-class:not(:first-child):not(.special) {
 	order: 20;
+}
+
+.test-any-link-pseudo-class:-moz-any-link {
+	order: 21;
 }
 
 .test-any-link-pseudo-class:any-link {
