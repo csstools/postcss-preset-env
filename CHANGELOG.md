@@ -1,5 +1,6 @@
 # Changes to PostCSS Preset Env
 
+- Added: `autoprefixer`
 - Added: `postcss-color-functional-notation`
 - Added: `postcss-env-function`
 - Added: `postcss-lab-function`
