@@ -25,8 +25,8 @@
     "node": ">=4.0.0"
   },
   "dependencies": {
-    "browserslist": "^3.2.6",
-    "caniuse-lite": "^1.0.30000836",
+    "browserslist": "^3.2.7",
+    "caniuse-lite": "^1.0.30000839",
     "cssdb": "^2.2.0",
     "postcss": "^6.0.22",
     "postcss-attribute-case-insensitive": "^3.0.0",
@@ -60,7 +60,7 @@
   "devDependencies": {
     "babel-core": "^6.26.3",
     "babel-eslint": "^8.2.3",
-    "babel-preset-env": "^1.6.1",
+    "babel-preset-env": "^1.7.0",
     "eslint": "^4.19.1",
     "eslint-config-dev": "^2.0.0",
     "postcss-simple-vars": "^4.1.0",
