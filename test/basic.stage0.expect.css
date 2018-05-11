@@ -14,11 +14,13 @@
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
 
 .test-image-set-function {
-	background-image: url(img/test-2x.png);
+	background-image:  url(img/test-2x.png);
 }
 }
 
 .test-image-set-function {
+	background-image: -webkit-image-set(url(img/test.png) 1x, url(img/test-2x.png) 2x);
+	background-image: image-set(url(img/test.png) 1x, url(img/test-2x.png) 2x);
 	order: 2;
 }
 
@@ -80,24 +82,39 @@
 	order: 13;
 }
 
-.test-system-ui-font-family {
-	font-family: system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Droid Sans, Helvetica Neue;
+.test-color-functional-notation {
+	color: rgba(178, 34, 34, 0.5);
 	order: 14;
 }
 
-.test-font-variant-property {
-	font-feature-settings: "c2sc";
-	font-variant-caps: small-caps;
+.test-lab-function {
+	background-color: rgb(178, 34, 34);
+	color: rgba(178, 34, 34, 0.5);
 	order: 15;
 }
 
+.test-system-ui-font-family {
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Droid Sans, Helvetica Neue;
+	order: 16;
+}
+
+.test-font-variant-property {
+	-webkit-font-feature-settings: "c2sc";
+	        font-feature-settings: "c2sc";
+	font-variant-caps: small-caps;
+	order: 17;
+}
+
 .test-all-property {
-	animation: none 0s ease 0s 1 normal none running;
-	backface-visibility: visible;
+	-webkit-animation: none 0s ease 0s 1 normal none running;
+	        animation: none 0s ease 0s 1 normal none running;
+	-webkit-backface-visibility: visible;
+	        backface-visibility: visible;
 	background: transparent none repeat 0 0 / auto auto padding-box border-box scroll;
 	border: medium none currentColor;
 	border-collapse: separate;
-	border-image: none;
+	-o-border-image: none;
+	   border-image: none;
 	border-radius: 0;
 	border-spacing: 0;
 	bottom: auto;
@@ -107,13 +124,21 @@
 	clear: none;
 	clip: auto;
 	color: #000;
-	columns: auto;
-	column-count: auto;
-	column-fill: balance;
-	column-gap: normal;
-	column-rule: medium none currentColor;
-	column-span: 1;
-	column-width: auto;
+	-webkit-columns: auto;
+	        columns: auto;
+	-webkit-column-count: auto;
+	        column-count: auto;
+	-webkit-column-fill: balance;
+	        column-fill: balance;
+	grid-column-gap: normal;
+	-webkit-column-gap: normal;
+	        column-gap: normal;
+	-webkit-column-rule: medium none currentColor;
+	        column-rule: medium none currentColor;
+	-webkit-column-span: 1;
+	        column-span: 1;
+	-webkit-column-width: auto;
+	        column-width: auto;
 	content: normal;
 	counter-increment: none;
 	counter-reset: none;
@@ -130,7 +155,9 @@
 	font-stretch: normal;
 	line-height: normal;
 	height: auto;
-	hyphens: none;
+	-webkit-hyphens: none;
+	    -ms-hyphens: none;
+	        hyphens: none;
 	left: auto;
 	letter-spacing: normal;
 	list-style: disc outside none;
@@ -149,11 +176,15 @@
 	page-break-after: auto;
 	page-break-before: auto;
 	page-break-inside: auto;
-	perspective: none;
-	perspective-origin: 50% 50%;
+	-webkit-perspective: none;
+	        perspective: none;
+	-webkit-perspective-origin: 50% 50%;
+	        perspective-origin: 50% 50%;
 	position: static;
 	right: auto;
-	tab-size: 8;
+	-moz-tab-size: 8;
+	  -o-tab-size: 8;
+	     tab-size: 8;
 	table-layout: auto;
 	text-align: left;
 	text-align-last: auto;
@@ -162,9 +193,12 @@
 	text-shadow: none;
 	text-transform: none;
 	top: auto;
-	transform: none;
-	transform-origin: 50% 50% 0;
-	transform-style: flat;
+	-webkit-transform: none;
+	        transform: none;
+	-webkit-transform-origin: 50% 50% 0;
+	        transform-origin: 50% 50% 0;
+	-webkit-transform-style: flat;
+	        transform-style: flat;
 	transition: none 0s ease 0s;
 	unicode-bidi: normal;
 	vertical-align: baseline;
@@ -175,34 +209,46 @@
 	word-spacing: normal;
 	z-index: auto;
 	all: initial;
-	order: 16;
-}
-
-.test-matches-pseudo-class:first-child, .test-matches-pseudo-class.special {
-	order: 17;
-}
-
-.test-not-pseudo-class:not(:first-child):not(.special) {
 	order: 18;
 }
 
-.test-any-link-pseudo-class:link,.test-any-link-pseudo-class:visited {
+.test-matches-pseudo-class:first-child, .test-matches-pseudo-class.special {
 	order: 19;
 }
 
-[dir="rtl"] .test-dir-pseudo-class {
+.test-not-pseudo-class:not(:first-child):not(.special) {
 	order: 20;
 }
 
-.test-overflow-wrap-property {
+.test-any-link-pseudo-class:link,.test-any-link-pseudo-class:visited {
 	order: 21;
+}
+
+.test-any-link-pseudo-class:-webkit-any-link {
+	order: 21;
+}
+
+.test-any-link-pseudo-class:-moz-any-link {
+	order: 21;
+}
+
+.test-any-link-pseudo-class:any-link {
+	order: 21;
+}
+
+[dir="rtl"] .test-dir-pseudo-class {
+	order: 22;
+}
+
+.test-overflow-wrap-property {
+	order: 23;
 	word-wrap: break-word;
 }
 
 .test-focus-visible-pseudo-class.focus-visible {
-	order: 22;
+	order: 24;
 }
 
 .test-focus-visible-pseudo-class:focus-visible {
-	order: 22;
+	order: 24;
 }

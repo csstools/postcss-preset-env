@@ -26,7 +26,7 @@ scope and avoid unrelated commits.
    cd postcss-preset-env
 
    # Assign the original repo to a remote called "upstream"
-   git remote add upstream git@github.com:jonathantneal/postcss-preset-env.git
+   git remote add upstream git@github.com:csstools/postcss-preset-env.git
 
    # Install the tools necessary for testing
    npm install
@@ -63,7 +63,7 @@ That’s it! Now [open a pull request] with a clear title and description.
 If you want to add a new plugin, follow the
 [pull request guidelines](#submitting-pull-requests) while making these changes:
 
-- Ensure the feature exists in [cssdb](https://github.com/jonathantneal/css-db).
+- Ensure the feature exists in [cssdb](https://cssdb.org/).
 - Add the plugin to the `dependencies` list in [`package.json`](package.json).
 - Add the plugin to
   [`lib/plugins-by-id.js`](lib/plugins-by-id.js).
