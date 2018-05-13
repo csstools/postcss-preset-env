@@ -18,8 +18,9 @@ export default postcss.plugin('postcss-preset-env', opts => {
 			? 5
 		: parseInt(opts.stage) || 0
 	: 2;
+	const autoprefixerOptions = Object(opts).autoprefixerOptions
 
-	const stagedAutoprefixer = autoprefixer({ browsers });
+	const stagedAutoprefixer = autoprefixer(Object.assign({ browsers }, autoprefixerOptions));
 
 	// polyfillable features (those with an available postcss plugin)
 	const polyfillableFeatures = cssdb.concat(
