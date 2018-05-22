@@ -229,17 +229,30 @@ Setting the `stage` option to `false` will disable all of the polyfills. Doing
 this would only be useful if you intended to exclusively use the
 [`features`](#features) option.
 
+Without any configuration options, [PostCSS Preset Env] enables **Stage 2**
+features.
+
 ### features
 
 The `features` option enables or disables specific polyfills. Passing `true` to
 a specific feature id will enable its polyfill, while passing `false` will
-disable it. Passing an object `{}` to a specific feature id will enable and
-configure it.
+disable it.
 
 ```js
 postcssPresetEnv({
   stage: 3,
   features: [ 'nesting-rules' ]
+})
+```
+
+Passing an object `{}` to a specific feature id will enable and
+configure it.
+
+```js
+postcssPresetEnv({
+  'color-mod-function': {
+    unresolved: 'warn'
+  }
 })
 ```
 
@@ -265,6 +278,10 @@ postcssPresetEnv({
 })
 ```
 
+If not valid browserslist configuration is specified, the
+[default browserslist query](https://github.com/browserslist/browserslist#queries)
+will be used.
+
 ### insertBefore / insertAfter
 
 The `insertBefore` and `insertAfter` keys allow you to insert other PostCSS
@@ -282,6 +299,12 @@ postcssPresetEnv({
 })
 ```
 
+### autoprefixer
+
+The `autoprefixer` option passes
+[additional options](https://github.com/postcss/autoprefixer#options)
+into [autoprefixer].
+
 [cli-img]: https://img.shields.io/travis/csstools/postcss-preset-env.svg
 [cli-url]: https://travis-ci.org/csstools/postcss-preset-env
 [git-img]: https://img.shields.io/badge/support-chat-blue.svg
@@ -291,6 +314,7 @@ postcssPresetEnv({
 [win-img]: https://img.shields.io/appveyor/ci/jonathantneal/postcss-preset-env.svg
 [win-url]: https://ci.appveyor.com/project/jonathantneal/postcss-preset-env
 
+[autoprefixer]: https://github.com/postcss/autoprefixer
 [browserslist]: https://github.com/browserslist/browserslist#readme
 [caniuse]: https://caniuse.com/
 [cssdb]: https://cssdb.org/

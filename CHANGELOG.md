@@ -1,5 +1,15 @@
 # Changes to PostCSS Preset Env
 
+### 5.1.0 (May 21, 2018)
+
+- Added: `autoprefixer` option to pass options into autoprefixer
+- Updated: `autoprefixer` to v8.5.0 (minor update)
+- Updated: `browserslist` to v3.2.8 (patch update)
+- Updated: `caniuse-lite` to v1.0.30000844 (patch update)
+- Updated: `postcss-color-functional-notation` to v1.0.1 (patch update)
+
+### 5.0.0 (May 11, 2018)
+
 - Added: `autoprefixer`
 - Added: `postcss-color-functional-notation`
 - Added: `postcss-env-function`
