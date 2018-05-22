@@ -18,7 +18,7 @@ export default postcss.plugin('postcss-preset-env', opts => {
 			? 5
 		: parseInt(opts.stage) || 0
 	: 2;
-	const autoprefixerOptions = Object(opts).autoprefixerOptions
+	const autoprefixerOptions = Object(opts).autoprefixer;
 
 	const stagedAutoprefixer = autoprefixer(Object.assign({ browsers }, autoprefixerOptions));
 
