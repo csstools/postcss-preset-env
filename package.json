@@ -25,13 +25,13 @@
     "node": ">=4.0.0"
   },
   "dependencies": {
-    "autoprefixer": "^8.4.1",
-    "browserslist": "^3.2.7",
-    "caniuse-lite": "^1.0.30000839",
+    "autoprefixer": "^8.5.0",
+    "browserslist": "^3.2.8",
+    "caniuse-lite": "^1.0.30000844",
     "cssdb": "^3.1.0",
     "postcss": "^6.0.22",
     "postcss-attribute-case-insensitive": "^3.0.0",
-    "postcss-color-functional-notation": "^1.0.0",
+    "postcss-color-functional-notation": "^1.0.1",
     "postcss-color-hex-alpha": "^3.0.0",
     "postcss-color-mod-function": "^2.4.2",
     "postcss-color-rebeccapurple": "^3.1.0",
@@ -68,7 +68,7 @@
     "postcss-simple-vars": "^4.1.0",
     "postcss-tape": "^2.2.0",
     "pre-commit": "^1.2.2",
-    "rollup": "^0.58.2",
+    "rollup": "^0.59.2",
     "rollup-plugin-babel": "^3.0.4"
   },
   "eslintConfig": {
