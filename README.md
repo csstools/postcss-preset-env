@@ -240,8 +240,11 @@ disable it.
 
 ```js
 postcssPresetEnv({
+  /* use stage 3 features + css nesting rules */
   stage: 3,
-  features: [ 'nesting-rules' ]
+  features: {
+    'nesting-rules': true
+  }
 })
 ```
 
@@ -250,8 +253,12 @@ configure it.
 
 ```js
 postcssPresetEnv({
-  'color-mod-function': {
-    unresolved: 'warn'
+  /* use stage 3 features + css color-mod (warning on unresolved) */
+  stage: 3,
+  features: {
+    'color-mod-function': {
+      unresolved: 'warn'
+    }
   }
 })
 ```
