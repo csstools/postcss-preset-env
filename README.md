@@ -9,7 +9,7 @@
 can understand, determining the polyfills you need based on your targeted
 browsers or runtime environments.
 
-```sh
+```bash
 npm install postcss-preset-env
 ```
 
@@ -90,7 +90,7 @@ features and supports **all** browsers.
 
 ## Usage
 
-Add [PostCSS Preset Env] to your build tool:
+Add [PostCSS Preset Env] to your project:
 
 ```bash
 npm install postcss-preset-env --save-dev
@@ -108,7 +108,7 @@ postcssPresetEnv.process(YOUR_CSS);
 
 #### PostCSS
 
-Add [PostCSS] to your build tool:
+Add [PostCSS] to your project:
 
 ```bash
 npm install postcss --save-dev
@@ -127,7 +127,7 @@ postcss([
 
 #### Webpack
 
-Add [PostCSS Loader] to your build tool:
+Add [PostCSS Loader] to your project:
 
 ```bash
 npm install postcss-loader --save-dev
@@ -156,7 +156,29 @@ export default {
       }
     ]
   }
-}
+};
+```
+
+#### Create React App
+
+Add [React App Rewired] and [React App Rewire PostCSS] to your project:
+
+```bash
+npm install react-app-rewired react-app-rewire-postcss --save-dev
+```
+
+Use [React App Rewire PostCSS] and [PostCSS Preset Env] in your
+`config-overrides.js` file:
+
+```js
+import reactAppRewirePostcss from 'react-app-rewire-postcss';
+import postcssPresetEnv from 'postcss-preset-env';
+
+export default config => reactAppRewirePostcss(config, {
+  plugins: () => [
+    postcssPresetEnv(/* options */)
+  ]
+});
 ```
 
 #### Gulp
@@ -184,7 +206,7 @@ gulp.task('css', () => gulp.src('./src/*.css').pipe(
 
 #### Grunt
 
-Add [Grunt PostCSS] to your build tool:
+Add [Grunt PostCSS] to your project:
 
 ```bash
 npm install grunt-postcss --save-dev
@@ -330,6 +352,8 @@ into [autoprefixer].
 [PostCSS Loader]: https://github.com/postcss/postcss-loader
 [Gulp PostCSS]: https://github.com/postcss/gulp-postcss
 [Grunt PostCSS]: https://github.com/nDmitry/grunt-postcss
+[React App Rewire PostCSS]: https://github.com/csstools/react-app-rewire-postcss
+[React App Rewired]: https://github.com/timarney/react-app-rewired
 [readme-style-with-preset-env-img]: https://csstools.github.io/postcss-preset-env/readme-style-with-preset-env.svg
 [readme-style-with-preset-env-url]: https://codepen.io/pen?template=OZRovK
 [readme-transform-with-preset-env-img]: https://csstools.github.io/postcss-preset-env/readme-transform-with-preset-env.svg
