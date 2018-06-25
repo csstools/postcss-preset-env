@@ -1,5 +1,12 @@
 # Changes to PostCSS Preset Env
 
+### 5.2.0 (June 25, 2018)
+
+- Updated: `autoprefixer` to v8.5.3 (patch update)
+- Updated: `caniuse-lite` to v1.0.30000858 (patch update)
+- Updated: `postcss` to 6.0.23 (patch update)
+- Updated: `postcss-nesting` to v6.0.0 (major internal update, non-breaking for this project)
+
 ### 5.1.0 (May 21, 2018)
 
 - Added: `autoprefixer` option to pass options into autoprefixer

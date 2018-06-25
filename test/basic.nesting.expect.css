@@ -23,10 +23,11 @@
 }
 
 .test-nesting-rules p {
-	order: 5;
-}
+		order: 5;
+	}
 
 .test-nesting-rules {
+
 	order: 6;
 }
 
