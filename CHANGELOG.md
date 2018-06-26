@@ -1,5 +1,10 @@
 # Changes to PostCSS Preset Env
 
+### 5.2.1 (June 26, 2018)
+
+- Updated: `caniuse-lite` to v1.0.30000859 (patch update)
+- Updated: `postcss-attribute-case-insensitive` to v3.0.1 (patch update)
+
 ### 5.2.0 (June 25, 2018)
 
 - Updated: `autoprefixer` to v8.5.3 (patch update)
