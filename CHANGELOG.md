@@ -7,7 +7,7 @@
 
 ### 5.2.0 (June 25, 2018)
 
-- Updated: `autoprefixer` to v8.5.3 (patch update)
+- Updated: `autoprefixer` to v8.6.3 (minor update)
 - Updated: `caniuse-lite` to v1.0.30000858 (patch update)
 - Updated: `postcss` to 6.0.23 (patch update)
 - Updated: `postcss-nesting` to v6.0.0 (major internal update, non-breaking for this project)
