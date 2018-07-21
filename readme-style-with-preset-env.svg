@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1068 151" width="212">
+	<linearGradient id="a" x2="0" y2="100%"><stop offset="0" stop-color="#fcfcfc" stop-opacity="0"></stop><stop offset="1" stop-opacity=".1"></stop></linearGradient>
+	<g fill="#333" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-weight="700" font-size="100">
+		<text x="534" y="111">Style with Preset Env</text>
+	</g>
+	<rect stroke="#d5d5d5" fill="url(#a)" x="8" y="8" width="1052" height="135" stroke-width="8" rx="12"></rect>
+</svg>

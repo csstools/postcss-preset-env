@@ -1,0 +1,21 @@
+{
+  "name": "postcss-preset-env-codepen",
+  "version": "1.0.0",
+  "scripts": {
+    "start:browser": "browserify --debug browser.js | babel --source-maps inline --presets=env | uglifyjs --source-map \"content=inline,url='browser.bundle.js.map'\" --compress --output browser.bundle.js; gzip-size browser.bundle.js",
+    "start:codepen": "browserify --debug codepen.js | babel --source-maps inline --presets=env | uglifyjs --source-map \"content=inline,url='codepen.bundle.js.map'\" --compress --output codepen.bundle.js; gzip-size codepen.bundle.js",
+    "start": "npm run start:browser && npm run start:codepen"
+  },
+  "dependencies": {
+    "browserslist": "^4.0.1",
+    "postcss": "^6.0.23"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "browserify": "^16.2.2",
+    "gzip-size-cli": "^3.0.0",
+    "uglify-js": "^3.4.5"
+  },
+  "private": true
+}
