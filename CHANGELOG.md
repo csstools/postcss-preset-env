@@ -1,5 +1,9 @@
 # Changes to PostCSS Preset Env
 
+### 5.2.3 (July 21, 2018)
+
+- Updated: `postcss-color-mod-function` to v2.4.3 (patch update)
+
 ### 5.2.2 (July 13, 2018)
 
 - Updated: `autoprefixer` to v8.6.5 (patch update)
