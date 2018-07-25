@@ -1,6 +1,6 @@
 {
   "name": "postcss-preset-env",
-  "version": "5.2.3",
+  "version": "5.3.0",
   "description": "Convert modern CSS into something browsers understand",
   "author": "Jonathan Neal <jonathantneal@hotmail.com>",
   "license": "CC0-1.0",
@@ -47,7 +47,7 @@
     "postcss-gap-properties": "^1.0.0",
     "postcss-image-set-function": "^2.0.0",
     "postcss-initial": "^2.0.0",
-    "postcss-lab-function": "^1.0.1",
+    "postcss-lab-function": "^1.1.0",
     "postcss-logical": "^1.1.1",
     "postcss-media-minmax": "^3.0.0",
     "postcss-nesting": "^6.0.0",

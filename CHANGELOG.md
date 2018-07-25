@@ -1,5 +1,9 @@
 # Changes to PostCSS Preset Env
 
+### 5.3.0 (July 24, 2018)
+
+- Updated: `postcss-lab-function` to v1.1.0 (minor update)
+
 ### 5.2.3 (July 21, 2018)
 
 - Updated: `postcss-color-mod-function` to v2.4.3 (patch update)
