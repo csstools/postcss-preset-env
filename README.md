@@ -330,9 +330,19 @@ postcssPresetEnv({
 
 ### autoprefixer
 
-The `autoprefixer` option passes
+[PostCSS Preset Env] includes [autoprefixer] and `[browsers](#browsers)` option will be passed to it automatically.
+
+Specifying `autoprefixer` option enables passing
 [additional options](https://github.com/postcss/autoprefixer#options)
 into [autoprefixer].
+
+```js
+postcssPresetEnv({
+  autoprefixer: {
+    grid: true
+  }
+})
+```
 
 [cli-img]: https://img.shields.io/travis/csstools/postcss-preset-env.svg
 [cli-url]: https://travis-ci.org/csstools/postcss-preset-env
