@@ -328,9 +328,11 @@ postcssPresetEnv({
 })
 ```
 
-#### Configuring
+### Configuring
 
 Pass the configuration to the plugin in any way supported by [postcss-load-config](https://github.com/michael-ciniawsky/postcss-load-config).
+
+#### postcss.config.js
 
 ```js
 module.exports = {
@@ -339,10 +341,22 @@ module.exports = {
     'postcss-preset-env': {
       stage: 3,
       browsers: ['last 2 versions', '> 5%'],
-    },
-    'postcss-calc': {}
+    }
   }
 };
+```
+
+#### package.json
+
+```json
+{
+  "postcss": {
+    "postcss-preset-env": {
+      "": 3,
+      "browsers": ["last 2 versions", "> 5%"]
+    }
+  }
+}
 ```
 
 ### autoprefixer
