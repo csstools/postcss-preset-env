@@ -336,7 +336,6 @@ Pass the configuration to the plugin in any way supported by [postcss-load-confi
 
 ```js
 module.exports = {
-  indent: 'postcss',
   plugins: {
     'postcss-preset-env': {
       stage: 3,
@@ -352,7 +351,7 @@ module.exports = {
 {
   "postcss": {
     "postcss-preset-env": {
-      "": 3,
+      "stage": 3,
       "browsers": ["last 2 versions", "> 5%"]
     }
   }
