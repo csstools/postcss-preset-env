@@ -328,9 +328,39 @@ postcssPresetEnv({
 })
 ```
 
+### Configuring
+
+Pass the configuration to the plugin in any way supported by [postcss-load-config](https://github.com/michael-ciniawsky/postcss-load-config).
+
+#### postcss.config.js
+
+```js
+module.exports = {
+  plugins: {
+    'postcss-preset-env': {
+      stage: 3,
+      browsers: ['last 2 versions', '> 5%'],
+    }
+  }
+};
+```
+
+#### package.json
+
+```json
+{
+  "postcss": {
+    "postcss-preset-env": {
+      "stage": 3,
+      "browsers": ["last 2 versions", "> 5%"]
+    }
+  }
+}
+```
+
 ### autoprefixer
 
-[PostCSS Preset Env] includes [autoprefixer] and `[browsers](#browsers)` option will be passed to it automatically.
+[PostCSS Preset Env] includes [autoprefixer] and [`browsers`](#browsers) option will be passed to it automatically.
 
 Specifying `autoprefixer` option enables passing
 [additional options](https://github.com/postcss/autoprefixer#options)
