@@ -238,8 +238,7 @@ grunt.initConfig({
 ### stage
 
 The `stage` option determines which CSS features to polyfill, based upon their
-stability in the process of becoming implemented web standards. The stages are
-0 through 4.
+stability in the process of becoming implemented web standards (See also https://cssdb.org/#staging-process).
 
 ```js
 postcssPresetEnv({
