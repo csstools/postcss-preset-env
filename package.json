@@ -1,6 +1,6 @@
 {
   "name": "postcss-preset-env",
-  "version": "6.0.0",
+  "version": "6.0.1",
   "description": "Convert modern CSS into something browsers understand",
   "author": "Jonathan Neal <jonathantneal@hotmail.com>",
   "license": "CC0-1.0",
@@ -43,7 +43,6 @@
     "postcss-env-function": "^2.0.1",
     "postcss-focus-visible": "^4.0.0",
     "postcss-focus-within": "^3.0.0",
-    "postcss-font-family-system-ui": "^4.1.0",
     "postcss-font-variant": "^4.0.0",
     "postcss-gap-properties": "^2.0.0",
     "postcss-image-set-function": "^3.0.1",

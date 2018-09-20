@@ -1,5 +1,11 @@
 # Changes to PostCSS Preset Env
 
+### 6.0.1 (September 20, 2018)
+
+- Fixed: Issue with the `system-ui` font family polyfill by replacing
+  `postcss-font-family-system-ui` with an internal polyfill, at least until the
+  problem with the original plugin is resolved.
+
 ### 6.0.0 (September 20, 2018)
 
 - Added: Support for PostCSS 7+
