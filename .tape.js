@@ -61,9 +61,12 @@ module.exports = {
 			}
 		},
 		'insert:before': {
-			message: 'supports { stage: 1, before: { "color-mod-function": [ require("postcss-simple-vars") ] } } usage',
+			message: 'supports { stage: 1, features: { "color-mod-function": true }, insertBefore: { "color-mod-function": [ require("postcss-simple-vars") ] } } usage',
 			options: {
 				stage: 1,
+				features: {
+					'color-mod-function': true
+				},
 				insertBefore: {
 					'color-mod-function': [
 						require('postcss-simple-vars')
@@ -72,31 +75,31 @@ module.exports = {
 			}
 		},
 		'insert:after': {
-			message: 'supports { stage: 1, after: { "color-mod-function": [ require("postcss-simple-vars")() ] } } usage',
+			message: 'supports { stage: 1, features: { "color-mod-function": { unresolved: "warn" } }, insertAfter: { "color-mod-function": [ require("postcss-simple-vars")() ] } } usage',
 			options: {
 				stage: 1,
-				insertAfter: {
-					'color-mod-function': require('postcss-simple-vars')
-				},
 				features: {
 					'color-mod-function': {
 						unresolved: 'warn'
 					}
+				},
+				insertAfter: {
+					'color-mod-function': require('postcss-simple-vars')
 				}
 			},
 			warning: 2
 		},
 		'insert:after:exec': {
-			message: 'supports { stage: 2, after: { "color-mod-function": require("postcss-simple-vars")() } } usage',
+			message: 'supports { stage: 2, features: { "color-mod-function": { unresolved: "ignore" } }, insertAfter: { "color-mod-function": require("postcss-simple-vars")() } } usage',
 			options: {
 				stage: 2,
-				insertAfter: {
-					'color-mod-function': require('postcss-simple-vars')()
-				},
 				features: {
 					'color-mod-function': {
 						unresolved: 'ignore'
 					}
+				},
+				insertAfter: {
+					'color-mod-function': require('postcss-simple-vars')()
 				}
 			},
 			expect: 'insert.after.expect.css'
@@ -117,6 +120,23 @@ module.exports = {
 				}
 			},
 			expect: 'insert.after.expect.css'
-		}
+		},
+		'import': {
+			message: 'supports { importFrom: { customMedia, customProperties, customSelectors }, stage: 0 } usage',
+			options: {
+				importFrom: {
+					customMedia: {
+						'--narrow-window': '(max-width: 30em)'
+					},
+					customProperties: {
+						'--order': '1'
+					},
+					customSelectors: {
+						':--heading': 'h1, h2, h3, h4, h5, h6'
+					}
+				},
+				stage: 0
+			}
+		},
 	}
 };

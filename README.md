@@ -288,6 +288,11 @@ postcssPresetEnv({
 Any polyfills not explicitly enabled or disabled through `features` are
 determined by the [`stage`](#stage) option.
 
+In [PostCSS Preset Env] 5 and below, passing `true` to a specific feature id
+would initially enable its polyfill, while passing `false` would initially
+disable it. A browserslist would still determine whether the polyfill was
+included. In version 6, this behavior was moved to `toggle`.
+
 ### browsers
 
 The `browsers` option determines which browsers are being supported, which is

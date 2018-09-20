@@ -1,0 +1,16 @@
+.test-custom-properties {
+	order: var(--order);
+}
+
+@media (--narrow-window) {
+	.test-custom-media-queries {
+		order: 7;
+	}
+}
+
+.test-custom-selectors {
+	&:--heading {
+		order: 9;
+	}
+}
+
