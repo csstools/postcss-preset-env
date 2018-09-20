@@ -151,6 +151,8 @@
 	font-family: serif;
 	font-size: medium;
 	font-style: normal;
+	-webkit-font-feature-settings: normal;
+	        font-feature-settings: normal;
 	font-variant: normal;
 	font-weight: normal;
 	font-stretch: normal;

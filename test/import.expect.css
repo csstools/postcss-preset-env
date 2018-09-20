@@ -3,13 +3,13 @@
 	order: var(--order);
 }
 
-@media (max-width: 30em) {
+@media (max-width: 40rem) {
 	.test-custom-media-queries {
-		order: 7;
+		order: 2;
 	}
 }
 
 h1.test-custom-selectors,h2.test-custom-selectors,h3.test-custom-selectors,h4.test-custom-selectors,h5.test-custom-selectors,h6.test-custom-selectors {
-		order: 9;
+		order: 3;
 	}
 

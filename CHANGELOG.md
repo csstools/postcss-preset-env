@@ -1,5 +1,10 @@
 # Changes to PostCSS Preset Env
 
+### 6.0.2 (September 20, 2018)
+
+- Fixed: Do not break on an empty `importFrom` object
+- Fixed: Actually run `postcss-env-function`
+
 ### 6.0.1 (September 20, 2018)
 
 - Fixed: Issue with the `system-ui` font family polyfill by replacing

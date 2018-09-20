@@ -122,21 +122,24 @@ module.exports = {
 			expect: 'insert.after.expect.css'
 		},
 		'import': {
-			message: 'supports { importFrom: { customMedia, customProperties, customSelectors }, stage: 0 } usage',
+			message: 'supports { importFrom: { customMedia, customProperties, customSelectors, environmentVariables } } usage',
 			options: {
 				importFrom: {
 					customMedia: {
-						'--narrow-window': '(max-width: 30em)'
+						'--narrow-window': '(max-width: env(--sm))'
 					},
 					customProperties: {
 						'--order': '1'
 					},
 					customSelectors: {
 						':--heading': 'h1, h2, h3, h4, h5, h6'
+					},
+					environmentVariables: {
+						'--sm': '40rem'
 					}
 				},
 				stage: 0
 			}
-		},
+		}
 	}
 };

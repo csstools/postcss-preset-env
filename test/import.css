@@ -4,13 +4,13 @@
 
 @media (--narrow-window) {
 	.test-custom-media-queries {
-		order: 7;
+		order: 2;
 	}
 }
 
 .test-custom-selectors {
 	&:--heading {
-		order: 9;
+		order: 3;
 	}
 }
 
