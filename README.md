@@ -1,4 +1,4 @@
-# PostCSS Preset Env [<img src="https://postcss.github.io/postcss/logo.svg" alt="PostCSS" width="90" height="90" align="right">][PostCSS]
+# PostCSS Preset Env [<img src="https://postcss.github.io/postcss/logo.svg" alt="PostCSS" width="90" height="90" align="right">][postcss]
 
 [![NPM Version][npm-img]][npm-url]
 [![Build Status][cli-img]][cli-url]
@@ -36,10 +36,10 @@ body {
 }
 
 a {
-  color: rebeccapurple;
+  color: rgb(0 0 100% / 90%);
 
   &:hover {
-    color: color-mod(var(--mainColor) alpha(80%));
+    color: rebeccapurple;
   }
 }
 
@@ -74,11 +74,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 a {
-  color: #639
+  color: rgba(0, 0, 255, 0.9)
 }
 
 a:hover {
-  color: rgba(18, 52, 86, 0.8);
+  color: #639;
 }
 ```
 
@@ -96,169 +96,53 @@ Add [PostCSS Preset Env] to your project:
 npm install postcss-preset-env --save-dev
 ```
 
-#### Node
-
 Use [PostCSS Preset Env] to process your CSS:
 
 ```js
-import postcssPresetEnv from 'postcss-preset-env';
+const postcssPresetEnv = require('postcss-preset-env');
 
-postcssPresetEnv.process(YOUR_CSS);
+postcssPresetEnv.process(YOUR_CSS /*, processOptions, pluginOptions */);
 ```
 
-#### PostCSS
-
-Add [PostCSS] to your project:
-
-```bash
-npm install postcss --save-dev
-```
-
-Use [PostCSS Preset Env] as a plugin:
+Or use it as a [PostCSS] plugin:
 
 ```js
-import postcss from 'gulp-postcss';
-import postcssPresetEnv from 'postcss-preset-env';
+const postcss = require('postcss');
+const postcssPresetEnv = require('postcss-preset-env');
 
 postcss([
-  postcssPresetEnv(/* options */)
-]).process(YOUR_CSS);
+  postcssPresetEnv(/* pluginOptions */)
+]).process(YOUR_CSS /*, processOptions */);
 ```
 
-#### Webpack
+[PostCSS Preset Env] runs in all Node environments, with special instructions for:
 
-Add [PostCSS Loader] to your project:
-
-```bash
-npm install postcss-loader --save-dev
-```
-
-Use [PostCSS Preset Env] in your Webpack configuration:
-
-```js
-import postcssPresetEnv from 'postcss-preset-env';
-
-export default {
-  module: {
-    rules: [
-      {
-        test: /\.css$/,
-        use: [
-          'style-loader',
-          { loader: 'css-loader', options: { importLoaders: 1 } },
-          { loader: 'postcss-loader', options: {
-            ident: 'postcss',
-            plugins: () => [
-              postcssPresetEnv(/* options */)
-            ]
-          } }
-        ]
-      }
-    ]
-  }
-};
-```
-
-#### Create React App
-
-Add [React App Rewired] and [React App Rewire PostCSS] to your project:
-
-```bash
-npm install react-app-rewired react-app-rewire-postcss --save-dev
-```
-
-Use [React App Rewire PostCSS] and [PostCSS Preset Env] in your
-`config-overrides.js` file:
-
-```js
-import reactAppRewirePostcss from 'react-app-rewire-postcss';
-import postcssPresetEnv from 'postcss-preset-env';
-
-export default config => reactAppRewirePostcss(config, {
-  plugins: () => [
-    postcssPresetEnv(/* options */)
-  ]
-});
-```
-
-#### Gulp
-
-Add [Gulp PostCSS] to your build tool:
-
-```bash
-npm install gulp-postcss --save-dev
-```
-
-Use [PostCSS Preset Env] in your Gulpfile:
-
-```js
-import postcss from 'gulp-postcss';
-import postcssPresetEnv from 'postcss-preset-env';
-
-gulp.task('css', () => gulp.src('./src/*.css').pipe(
-  postcss([
-    postcssPresetEnv(/* options */)
-  ])
-).pipe(
-  gulp.dest('.')
-));
-```
-
-#### Grunt
-
-Add [Grunt PostCSS] to your project:
-
-```bash
-npm install grunt-postcss --save-dev
-```
-
-Use [PostCSS Preset Env] in your Gruntfile:
-
-```js
-import postcssPresetEnv from 'postcss-preset-env';
-
-grunt.loadNpmTasks('grunt-postcss');
-
-grunt.initConfig({
-  postcss: {
-    options: {
-      use: [
-       postcssPresetEnv(/* options */)
-      ]
-    },
-    dist: {
-      src: '*.css'
-    }
-  }
-});
-```
+| [Node](INSTALL.md#node) | [PostCSS CLI](INSTALL.md#postcss-cli) | [Webpack](INSTALL.md#webpack) | [Create React App](INSTALL.md#create-react-app) | [Gulp](INSTALL.md#gulp) | [Grunt](INSTALL.md#grunt) |
+| --- | --- | --- | --- | --- | --- |
 
 ## Options
 
 ### stage
 
 The `stage` option determines which CSS features to polyfill, based upon their
-stability in the process of becoming implemented web standards. The stages are
-0 through 4.
+stability in the process of becoming implemented web standards.
 
 ```js
-postcssPresetEnv({
-  stage: 0
-})
+postcssPresetEnv({ stage: 0 })
 ```
 
-Setting the `stage` option to `false` will disable all of the polyfills. Doing
-this would only be useful if you intended to exclusively use the
-[`features`](#features) option.
+The `stage` can be `0` (experimental) through `4` (stable), or `false`. Setting
+`stage` to `false` will disable every polyfill. Doing this would only be useful
+if you intended to exclusively use the [`features`](#features) option.
 
 Without any configuration options, [PostCSS Preset Env] enables **Stage 2**
 features.
 
 ### features
 
-The `features` option enables or disables specific polyfills. Passing `true` to
-a specific feature id will enable its polyfill, while passing `false` will
-disable it.
+The `features` option enables or disables specific polyfills by ID. Passing
+`true` to a specific feature ID will enable its polyfill, while passing `false`
+will disable it.
 
 ```js
 postcssPresetEnv({
@@ -270,17 +154,14 @@ postcssPresetEnv({
 })
 ```
 
-Passing an object `{}` to a specific feature id will enable and
-configure it.
+Passing an object to a specific feature ID will both enable and configure it.
 
 ```js
 postcssPresetEnv({
   /* use stage 3 features + css color-mod (warning on unresolved) */
   stage: 3,
   features: {
-    'color-mod-function': {
-      unresolved: 'warn'
-    }
+    'color-mod-function': { unresolved: 'warn' }
   }
 })
 ```
@@ -290,21 +171,18 @@ determined by the [`stage`](#stage) option.
 
 ### browsers
 
-The `browsers` option determines which browsers are being supported, which is
-used to further enable or disable polyfills, based upon their support matrix
-found at [caniuse].
+The `browsers` option determines which polyfills are required based upon the
+browsers you are supporting.
 
 [PostCSS Preset Env] supports any standard [browserslist] configuration, which
-includes a `.browserslistrc` file, a `browserslist` key in `package.json`, or
+can be a `.browserslistrc` file, a `browserslist` key in `package.json`, or
 `browserslist` environment variables.
 
 The `browsers` option should only be used when a standard browserslist
 configuration is not available.
 
 ```js
-postcssPresetEnv({
-  browsers: 'last 2 versions'
-})
+postcssPresetEnv({ browsers: 'last 2 versions' })
 ```
 
 If not valid browserslist configuration is specified, the
@@ -328,39 +206,10 @@ postcssPresetEnv({
 })
 ```
 
-### Configuring
-
-Pass the configuration to the plugin in any way supported by [postcss-load-config](https://github.com/michael-ciniawsky/postcss-load-config).
-
-#### postcss.config.js
-
-```js
-module.exports = {
-  plugins: {
-    'postcss-preset-env': {
-      stage: 3,
-      browsers: ['last 2 versions', '> 5%'],
-    }
-  }
-};
-```
-
-#### package.json
-
-```json
-{
-  "postcss": {
-    "postcss-preset-env": {
-      "stage": 3,
-      "browsers": ["last 2 versions", "> 5%"]
-    }
-  }
-}
-```
-
 ### autoprefixer
 
-[PostCSS Preset Env] includes [autoprefixer] and [`browsers`](#browsers) option will be passed to it automatically.
+[PostCSS Preset Env] includes [autoprefixer] and [`browsers`](#browsers) option
+will be passed to it automatically.
 
 Specifying `autoprefixer` option enables passing
 [additional options](https://github.com/postcss/autoprefixer#options)
@@ -368,10 +217,148 @@ into [autoprefixer].
 
 ```js
 postcssPresetEnv({
-  autoprefixer: {
-    grid: true
-  }
+  autoprefixer: { grid: true }
 })
+```
+
+### preserve
+
+The `preserve` option determines whether all plugins should receive a
+`preserve` option, which may preserve or remove otherwise-polyfilled CSS. By
+default, this option is not configured.
+
+```js
+postcssPresetEnv({
+  preserve: false // instruct all plugins to omit pre-polyfilled CSS
+});
+```
+
+### importFrom
+
+The `importFrom` option specifies sources where variables like Custom Media,
+Custom Properties, Custom Selectors, and Environment Variables can be imported
+from, which might be CSS, JS, and JSON files, functions, and directly passed
+objects.
+
+```js
+postcssPresetEnv({
+  /*
+    @custom-media --small-viewport (max-width: 30em);
+    @custom-selector :--heading h1, h2, h3;
+    :root { --color: red; }
+  */
+  importFrom: 'path/to/file.css'
+});
+```
+
+Multiple sources can be passed into this option, and they will be parsed in the
+order they are received. JavaScript files, JSON files, functions, and objects
+will use different namespaces to import different kinds of variables.
+
+```js
+postcssPresetEnv({
+  importFrom: [
+    /*
+      @custom-media --small-viewport (max-width: 30em);
+      @custom-selector :--heading h1, h2, h3;
+      :root { --color: red; }
+    */
+    'path/to/file.css',
+
+    /* module.exports = {
+      customMedia: { '--small-viewport': '(max-width: 30em)' },
+      customProperties: { '--color': 'red' },
+      customSelectors: { ':--heading': 'h1, h2, h3' },
+      environmentVariables: { '--branding-padding': '20px' }
+    } */
+    'and/then/this.js',
+
+    /* {
+      "custom-media": { "--small-viewport": "(max-width: 30em)" }
+      "custom-properties": { "--color": "red" },
+      "custom-selectors": { ":--heading": "h1, h2, h3" },
+      "environment-variables": { "--branding-padding": "20px" }
+    } */
+    'and/then/that.json',
+
+    {
+      customMedia: { '--small-viewport': '(max-width: 30em)' },
+      customProperties: { '--color': 'red' },
+      customSelectors: { ':--heading': 'h1, h2, h3' },
+      environmentVariables: { '--branding-padding': '20px' }
+    },
+    () => {
+      const customMedia = { '--small-viewport': '(max-width: 30em)' };
+      const customProperties = { '--color': 'red' };
+      const customSelectors = { ':--heading': 'h1, h2, h3' };
+      const environmentVariables = { '--branding-padding': '20px' };
+
+      return { customMedia, customProperties, customSelectors, environmentVariables };
+    }
+  ]
+});
+```
+
+### exportTo
+
+The `exportTo` option specifies destinations where variables like Custom Media,
+Custom Properties, Custom Selectors, and Environment Variables can be exported
+to, which might be CSS, JS, and JSON files, functions, and directly passed
+objects.
+
+```js
+postcssPresetEnv({
+  /*
+    @custom-media --small-viewport (max-width: 30em);
+    @custom-selector :--heading h1, h2, h3;
+    :root { --color: red; }
+  */
+  exportTo: 'path/to/file.css'
+});
+```
+
+Multiple destinations can be passed into this option as well, and they will be
+parsed in the order they are received. JavaScript files, JSON files, and
+objects will use different namespaces to import different kinds of variables.
+
+```js
+const cachedObject = {};
+
+postcssPresetEnv({
+  exportTo: [
+    /*
+      @custom-media --small-viewport (max-width: 30em);
+      @custom-selector :--heading h1, h2, h3;
+      :root { --color: red; }
+    */
+    'path/to/file.css',
+
+    /* module.exports = {
+      customMedia: { '--small-viewport': '(max-width: 30em)' },
+      customProperties: { '--color': 'red' },
+      customSelectors: { ':--heading': 'h1, h2, h3' },
+      environmentVariables: { '--branding-padding': '20px' }
+    } */
+    'and/then/this.js',
+
+    /* {
+      "custom-media": { "--small-viewport": "(max-width: 30em)" }
+      "custom-properties": { "--color": "red" },
+      "custom-selectors": { ":--heading": "h1, h2, h3" },
+      "environment-variables": { "--branding-padding": "20px" }
+    } */
+    'and/then/that.json',
+
+    cachedObject,
+    variables => {
+      if ('customProperties' in variables) {
+        // do something special with customProperties
+      }
+
+      Object.assign(cachedObject, variables);
+    }
+  ]
+});
 ```
 
 [cli-img]: https://img.shields.io/travis/csstools/postcss-preset-env.svg
@@ -389,11 +376,6 @@ postcssPresetEnv({
 [cssdb]: https://cssdb.org/
 [PostCSS]: https://github.com/postcss/postcss
 [PostCSS Preset Env]: https://github.com/csstools/postcss-preset-env
-[PostCSS Loader]: https://github.com/postcss/postcss-loader
-[Gulp PostCSS]: https://github.com/postcss/gulp-postcss
-[Grunt PostCSS]: https://github.com/nDmitry/grunt-postcss
-[React App Rewire PostCSS]: https://github.com/csstools/react-app-rewire-postcss
-[React App Rewired]: https://github.com/timarney/react-app-rewired
 [readme-style-with-preset-env-img]: https://csstools.github.io/postcss-preset-env/readme-style-with-preset-env.svg
 [readme-style-with-preset-env-url]: https://codepen.io/pen?template=OZRovK
 [readme-transform-with-preset-env-img]: https://csstools.github.io/postcss-preset-env/readme-transform-with-preset-env.svg

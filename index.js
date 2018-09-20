@@ -19,6 +19,7 @@ export default postcss.plugin('postcss-preset-env', opts => {
 		: parseInt(opts.stage) || 0
 	: 2;
 	const autoprefixerOptions = Object(opts).autoprefixer;
+	const sharedOpts = initializeSharedOpts(Object(opts));
 
 	const stagedAutoprefixer = autoprefixer(Object.assign({ browsers }, autoprefixerOptions));
 
@@ -64,8 +65,17 @@ export default postcss.plugin('postcss-preset-env', opts => {
 			browsers: feature.browsers,
 			plugin: typeof feature.plugin.process === 'function'
 				? features[feature.id] === true
-					? feature.plugin()
-				: feature.plugin(features[feature.id])
+					? sharedOpts
+						// if the plugin is enabled and has shared options
+						? feature.plugin(Object.assign({}, sharedOpts))
+					// otherwise, if the plugin is enabled
+					: feature.plugin()
+				: sharedOpts
+					// if the plugin has shared options and individual options
+					? feature.plugin(Object.assign({}, sharedOpts, features[feature.id]))
+				// if the plugin has individual options
+				: feature.plugin(Object.assign({}, features[feature.id]))
+			// if the plugin is already initialized
 			: feature.plugin,
 			id: feature.id
 		})
@@ -102,3 +112,25 @@ export default postcss.plugin('postcss-preset-env', opts => {
 		return polyfills;
 	};
 });
+
+const initializeSharedOpts = opts => {
+	if ('importFrom' in opts || 'exportTo' in opts || 'preserve' in opts) {
+		const sharedOpts = {};
+
+		if ('importFrom' in opts) {
+			sharedOpts.importFrom = opts.importFrom;
+		}
+
+		if ('exportTo' in opts) {
+			sharedOpts.exportTo = opts.exportTo;
+		}
+
+		if ('preserve' in opts) {
+			sharedOpts.preserve = opts.preserve;
+		}
+
+		return sharedOpts;
+	}
+
+	return false;
+}

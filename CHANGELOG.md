@@ -1,5 +1,18 @@
 # Changes to PostCSS Preset Env
 
+### 6.0.0 (September 20, 2018)
+
+- Added: Support for PostCSS 7+
+- Added: Support for PostCSS Values Parser 2+
+- Added: Support for PostCSS Selector Parser 5+
+- Added: Support for Node 6+
+- Updated: All 28 plugins
+
+### 5.4.0 (July 25, 2018)
+
+- Added: `toggle` option to override which features are enabled or disabled
+- Deprecated: toggle features with `toggle`, not `features`
+
 ### 5.3.0 (July 24, 2018)
 
 - Updated: `postcss-lab-function` to v1.1.0 (minor update)

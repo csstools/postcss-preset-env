@@ -1,5 +1,5 @@
 node_modules
-index.*.js
+index.*.*
 package-lock.json
 *.log*
 *.result.css
