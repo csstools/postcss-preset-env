@@ -1,5 +1,10 @@
 # Changes to PostCSS Preset Env
 
+### 6.0.3 (September 21, 2018)
+
+- Updated: `caniuse-lite` to 1.0.30000885 (patch)
+- Updated: `postcss-custom-properties` to 8.0.5 (patch)
+
 ### 6.0.2 (September 20, 2018)
 
 - Fixed: Do not break on an empty `importFrom` object
