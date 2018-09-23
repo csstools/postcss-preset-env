@@ -1,5 +1,10 @@
 # Changes to PostCSS Preset Env
 
+### 6.0.4 (September 23, 2018)
+
+- Updated: `caniuse-lite` to 1.0.30000887 (patch)
+- Updated: `postcss-color-mod-function` to 3.0.2 (patch)
+
 ### 6.0.3 (September 21, 2018)
 
 - Updated: `caniuse-lite` to 1.0.30000885 (patch)
