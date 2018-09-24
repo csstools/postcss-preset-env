@@ -1,5 +1,9 @@
 # Changes to PostCSS Preset Env
 
+### 6.0.6 (September 23, 2018)
+
+- Updated: `postcss-custom-media` to 7.0.4 (patch)
+
 ### 6.0.5 (September 23, 2018)
 
 - Updated: `postcss-color-mod-function` to 3.0.3 (patch)
