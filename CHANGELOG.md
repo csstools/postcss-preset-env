@@ -1,5 +1,10 @@
 # Changes to PostCSS Preset Env
 
+### 6.0.7 (September 23, 2018)
+
+- Updated: `postcss` to 7.0.3 (patch)
+- Updated: `postcss-custom-properties` to 8.0.6 (patch)
+
 ### 6.0.6 (September 23, 2018)
 
 - Updated: `postcss-custom-media` to 7.0.4 (patch)
