@@ -1,5 +1,12 @@
 # Changes to PostCSS Preset Env
 
+### 6.0.8 (October 1, 2018)
+
+- Updated: `caniuse-lite` to 1.0.30000888 (patch)
+- Updated: `postcss` to 7.0.4 (patch)
+
+**Did you hear? PostCSS Preset Env is now part of Create React App!** 🎉
+
 ### 6.0.7 (September 23, 2018)
 
 - Updated: `postcss` to 7.0.3 (patch)

@@ -88,7 +88,10 @@ module.exports = {
 
 ## Create React App
 
-Add [React App Rewired] and [React App Rewire PostCSS] to your project:
+**PostCSS Preset Env is already bundled with Create React App 2.**
+
+For Create React App 1, add [React App Rewired] and [React App Rewire PostCSS]
+to your project:
 
 ```bash
 npm install react-app-rewired react-app-rewire-postcss --save-dev
