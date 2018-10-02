@@ -1,5 +1,9 @@
 # Changes to PostCSS Preset Env
 
+### 6.0.10 (October 2, 2018)
+
+- Updated: `postcss-custom-properties` to 8.0.8 (patch)
+
 ### 6.0.9 (October 2, 2018)
 
 - Updated: `browserslist` to 4.1.2 (patch)
