@@ -211,7 +211,7 @@ postcssPresetEnv({
 [PostCSS Preset Env] includes [autoprefixer] and [`browsers`](#browsers) option
 will be passed to it automatically.
 
-Specifying `autoprefixer` option enables passing
+Specifying the `autoprefixer` option enables passing
 [additional options](https://github.com/postcss/autoprefixer#options)
 into [autoprefixer].
 
@@ -220,6 +220,8 @@ postcssPresetEnv({
   autoprefixer: { grid: true }
 })
 ```
+
+Passing `autoprefixer: false` disables autoprefixer.
 
 ### preserve
 

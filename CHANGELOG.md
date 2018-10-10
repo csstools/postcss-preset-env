@@ -1,5 +1,12 @@
 # Changes to PostCSS Preset Env
 
+### 6.1.0 (October 10, 2018)
+
+- Added: `postcss-color-gray`
+- Added: Passing `autoprefixer: false` disables autoprefixer
+- Updated: `browserslist` to 4.2.0 (minor)
+- Updated: `caniuse-lite` to 1.0.30000890 (patch)
+
 ### 6.0.10 (October 2, 2018)
 
 - Updated: `postcss-custom-properties` to 8.0.8 (patch)

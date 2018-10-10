@@ -55,6 +55,11 @@
 	order: 10;
 }
 
+.test-gray-function {
+	color: gray(50);
+	color: gray(50 / 50%);
+}
+
 .test-rebeccapurple-color {
 	color: rebeccapurple;
 	order: 11;

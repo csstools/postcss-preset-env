@@ -45,6 +45,12 @@ module.exports = {
 				}
 			}
 		},
+		'basic:autoprefixer:false': {
+			message: 'supports { autoprefixer: false } usage',
+			options: {
+				autoprefixer: false
+			}
+		},
 		'custom-properties': {
 			message: 'supports { browsers: "ie >= 10" } usage',
 			options: {

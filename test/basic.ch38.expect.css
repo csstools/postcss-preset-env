@@ -61,6 +61,11 @@
 	order: 10;
 }
 
+.test-gray-function {
+	color: rgb(119,119,119);
+	color: rgba(119,119,119,0.5);
+}
+
 .test-rebeccapurple-color {
 	color: rebeccapurple;
 	order: 11;
