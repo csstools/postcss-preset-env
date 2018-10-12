@@ -1,5 +1,9 @@
 # Changes to PostCSS Preset Env
 
+### 6.1.1 (October 12, 2018)
+
+- Updated: `postcss-custom-media` to 7.0.6 (patch)
+
 ### 6.1.0 (October 10, 2018)
 
 - Added: `postcss-color-gray`
