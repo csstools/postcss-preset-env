@@ -1,5 +1,11 @@
 # Changes to PostCSS Preset Env
 
+### 6.1.2 (October 19, 2018)
+
+- Updated `browserslist` to 4.2.1 (patch)
+- Updated `caniuse-lite` to 1.0.30000893 (patch)
+- Updated `postcss-custom-media` to 7.0.7 (patch)
+
 ### 6.1.1 (October 12, 2018)
 
 - Updated: `postcss-custom-media` to 7.0.6 (patch)
