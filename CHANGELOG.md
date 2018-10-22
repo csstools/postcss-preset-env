@@ -1,5 +1,10 @@
 # Changes to PostCSS Preset Env
 
+### 6.2.0 (October 22, 2018)
+
+- Updated `autoprefixer` to 9.2.1 (minor)
+- Updated `browserslist` to 4.3.1 (minor)
+
 ### 6.1.2 (October 19, 2018)
 
 - Updated `browserslist` to 4.2.1 (patch)
