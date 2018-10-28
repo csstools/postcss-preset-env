@@ -1,5 +1,13 @@
 # Changes to PostCSS Preset Env
 
+### 6.3.0 (October 28, 2018)
+
+- Added `postcss-double-position-gradients` 1.0.0 (major, non-breaking for this project)
+- Updated `autoprefixer` to 9.3.1 (minor)
+- Updated `browserslist` to 4.3.4 (patch)
+- Updated `caniuse-lite` to 1.0.30000899 (patch)
+- Updated `cssdb` to 4.1.0 (major, non-breaking for this project)
+
 ### 6.2.0 (October 22, 2018)
 
 - Updated `autoprefixer` to 9.2.1 (minor)
