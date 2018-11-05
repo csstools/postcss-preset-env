@@ -4,12 +4,12 @@ export default {
 	input: 'index.js',
 	output: [
 		{ file: 'index.cjs.js', format: 'cjs' },
-		{ file: 'index.es.mjs', format: 'es' }
+		{ file: 'index.esm.mjs', format: 'esm' }
 	],
 	plugins: [
 		babel({
 			presets: [
-				['@babel/env', { modules: false, targets: { node: 6 } }]
+				['@babel/env', { targets: { node: 6 } }]
 			]
 		})
 	]

@@ -1,5 +1,10 @@
 # Changes to PostCSS Preset Env
 
+### 6.3.1 (November 5, 2018)
+
+- Updated `caniuse-lite` to 1.0.30000905 (patch)
+- Updated `postcss-custom-properties` to 8.0.9 (patch)
+
 ### 6.3.0 (October 28, 2018)
 
 - Added `postcss-double-position-gradients` 1.0.0 (major, non-breaking for this project)
