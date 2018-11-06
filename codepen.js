@@ -1,6 +1,6 @@
-const browserslist = require('browserslist');
-const postcss = require('postcss');
-const plugin = require('..');
+import browserslist from 'browserslist';
+import postcss from 'postcss';
+import plugin from '../index.js';
 
 // prepare a cache for the <style> element and cached <style> text
 let $style, expectCSS, sourceCSS;
@@ -19,13 +19,8 @@ const processOptions = {
 
 // prepare the plugin options with defaults
 const pluginOptions = {
-	browsers: '> 5%',
-	stage: 0,
-	features: {
-		'custom-selectors': {
-			lineBreak: false
-		}
-	}
+	browsers: '> 3%',
+	stage: 0
 };
 
 // transform <style> source with a plugin
@@ -132,6 +127,26 @@ function initDOM () {
 					transformCSS();
 				}
 			};
+		} else {
+			window.addEventListener('message', event => {
+				const $oldStyle = document.head.querySelector('style.cp-pen-styles');
+
+				if ($oldStyle) {
+					document.head.removeChild($oldStyle);
+				}
+
+				const { css } = Object(Object(event.data).data);
+
+				if (typeof css === 'string') {
+					const nextCSS = css.trim();
+
+					if (nextCSS !== sourceCSS) {
+						sourceCSS = nextCSS;
+
+						transformCSS();
+					}
+				}
+			});
 		}
 
 		transformCSS();
@@ -200,7 +215,10 @@ function postcssHTMLStringifier (root, builder) {
 	}*/</span>`;
 
 	// stringify css vars
-	const replaceVars = string => string.replace(/:?--[\w-]+/g, '<span class=css-var>$&</span>');
+	const replaceVars = string => String(string).replace(/--[\w-]+/g, '<span class=css-var>$&</span>');
+
+	// stringify custom selectors
+	const replaceCustomSelectors = string => String(string).replace(/:--[\w-]+/g, '<span class=css-var>$&</span>');
 
 	// stringify css vars and css functions
 	const replaceVarsAndFns = string => replaceVars(string)
@@ -210,8 +228,8 @@ function postcssHTMLStringifier (root, builder) {
 	.replace(/([\w-]+):/g, '<span class=css-property>$1</span>:');
 
 	// stringify css vars and css functions
-	const replaceVarsAndSelectors = string => replaceVars(string)
-	.replace(/(^\s*|[(),]\s*)([\w-]+)/g, '$1<span class=css-tag>$2</span>');
+	const replaceVarsAndSelectors = string => replaceCustomSelectors(string)
+	.replace(/(^\s*|[(),]\s*|\s)([\w-]+)/g, '$1<span class=css-tag>$2</span>');
 
 	// conditionally print a semicolon separator
 	const semicolon = node => node.raws.semicolon ||
@@ -222,7 +240,7 @@ function postcssHTMLStringifier (root, builder) {
 
 	// conditionally print a raw
 	const raw = (node, type) => type in node.raws
-		? node.raws[type]
+		? String(node.raws[type] || '')
 	: node.parent && node.parent.raws
 		? raw(node.parent, type)
 	: '';

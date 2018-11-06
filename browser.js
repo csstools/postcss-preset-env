@@ -1,5 +1,6 @@
-const postcss = require('postcss');
-const plugin = require('..');
+import 'regenerator-runtime/runtime';
+import postcss from 'postcss';
+import plugin from '../index.js';
 
 // prepare a cache for <style> text with an incrementing id
 const css = {};

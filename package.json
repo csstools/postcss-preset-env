@@ -2,20 +2,25 @@
   "name": "postcss-preset-env-codepen",
   "version": "1.0.0",
   "scripts": {
-    "start:browser": "browserify --debug browser.js | babel --source-maps inline --presets=env | uglifyjs --source-map \"content=inline,url='browser.bundle.js.map'\" --compress --output browser.bundle.js; gzip-size browser.bundle.js",
-    "start:codepen": "browserify --debug codepen.js | babel --source-maps inline --presets=env | uglifyjs --source-map \"content=inline,url='codepen.bundle.js.map'\" --compress --output codepen.bundle.js; gzip-size codepen.bundle.js",
+    "start:browser": "rollup -c rollup.browser.config.js; browserify --debug browser.bundle6.js | babel --source-maps inline --filename browser.js --presets=@babel/env | uglifyjs --source-map \"content=inline,url='browser.bundle6.js.map'\" --compress --output browser.bundle6.js; gzip-size browser.bundle6.js",
+    "start:codepen": "rollup -c rollup.codepen.config.js; browserify --debug codepen.bundle6.js | babel --source-maps inline --filename codepen.js --presets=@babel/env | uglifyjs --source-map \"content=inline,url='codepen.bundle6.js.map'\" --compress --output codepen.bundle6.js; gzip-size codepen.bundle6.js",
     "start": "npm run start:browser && npm run start:codepen"
   },
   "dependencies": {
-    "browserslist": "^4.0.1",
-    "postcss": "^6.0.23"
+    "browserslist": "^4.3.4",
+    "postcss": "^7.0.5"
   },
   "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-preset-env": "^1.7.0",
-    "browserify": "^16.2.2",
+    "@babel/cli": "7.1.2",
+    "@babel/plugin-syntax-dynamic-import": "7.0.0",
+    "@babel/preset-env": "7.1.0",
+    "browserify": "^16.2.3",
     "gzip-size-cli": "^3.0.0",
-    "uglify-js": "^3.4.5"
+    "rollup": "^0.67.0",
+    "rollup-plugin-babel": "^4.0.3",
+    "rollup-plugin-node-builtins": "^2.1.2",
+    "rollup-plugin-node-globals": "^1.4.0",
+    "uglify-js": "^3.4.9"
   },
   "private": true
 }
