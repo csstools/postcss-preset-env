@@ -146,6 +146,42 @@ module.exports = {
 				},
 				stage: 0
 			}
+		},
+		'basic:export': {
+			message: 'supports { stage: 0 } usage',
+			options: {
+				stage: 0,
+				exportTo: [
+					'test/generated-custom-exports.css',
+					'test/generated-custom-exports.js',
+					'test/generated-custom-exports.json',
+					'test/generated-custom-exports.mjs'
+				]
+			},
+			expect: 'basic.stage0.expect.css',
+			result: 'basic.stage0.result.css',
+			before() {
+				global.__exportTo = {
+					css: require('fs').readFileSync('test/generated-custom-exports.css', 'utf8'),
+					js: require('fs').readFileSync('test/generated-custom-exports.js', 'utf8'),
+					json: require('fs').readFileSync('test/generated-custom-exports.json', 'utf8'),
+					mjs: require('fs').readFileSync('test/generated-custom-exports.mjs', 'utf8')
+				};
+			},
+			after() {
+				global.__exportAs = {
+					css: require('fs').readFileSync('test/generated-custom-exports.css', 'utf8'),
+					js: require('fs').readFileSync('test/generated-custom-exports.js', 'utf8'),
+					json: require('fs').readFileSync('test/generated-custom-exports.json', 'utf8'),
+					mjs: require('fs').readFileSync('test/generated-custom-exports.mjs', 'utf8')
+				};
+
+				Object.keys(global.__exportTo).forEach(key => {
+					if (global.__exportTo[key] !== global.__exportAs[key]) {
+						throw new Error(`The original ${key} file did not match the freshly exported copy`);
+					}
+				});
+			}
 		}
 	}
 };

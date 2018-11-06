@@ -6,6 +6,7 @@ import plugins from './lib/plugins-by-id';
 import getTransformedInsertions from './lib/get-transformed-insertions';
 import getUnsupportedBrowsersByFeature from './lib/get-unsupported-browsers-by-feature';
 import idsByExecutionOrder from './lib/ids-by-execution-order';
+import writeToExports from './lib/write-to-exports';
 
 export default postcss.plugin('postcss-preset-env', opts => {
 	// initialize options
@@ -20,7 +21,6 @@ export default postcss.plugin('postcss-preset-env', opts => {
 	: 2;
 	const autoprefixerOptions = Object(opts).autoprefixer;
 	const sharedOpts = initializeSharedOpts(Object(opts));
-
 	const stagedAutoprefixer = autoprefixerOptions === false
 		? () => {}
 	: autoprefixer(Object.assign({ browsers }, autoprefixerOptions));
@@ -109,7 +109,13 @@ export default postcss.plugin('postcss-preset-env', opts => {
 			Promise.resolve()
 		).then(
 			() => stagedAutoprefixer(result.root, result)
-		);
+		).then(
+			() => {
+				if (Object(opts).exportTo) {
+					writeToExports(sharedOpts.exportTo, opts.exportTo);
+				}
+			}
+		)
 
 		return polyfills;
 	};
@@ -124,7 +130,11 @@ const initializeSharedOpts = opts => {
 		}
 
 		if ('exportTo' in opts) {
-			sharedOpts.exportTo = opts.exportTo;
+			sharedOpts.exportTo = {
+				customMedia: {},
+				customProperties: {},
+				customSelectors: {},
+			};
 		}
 
 		if ('preserve' in opts) {
@@ -135,4 +145,4 @@ const initializeSharedOpts = opts => {
 	}
 
 	return false;
-}
+};
