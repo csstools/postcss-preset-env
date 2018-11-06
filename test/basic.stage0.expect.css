@@ -63,6 +63,20 @@
 	}
 }
 
+@media (color-index: 48) {
+	body {
+		background-color: black;
+		color: white;
+	}
+}
+
+@media (prefers-color-scheme: dark) {
+	body {
+		background-color: black;
+		color: white;
+	}
+}
+
 h1.test-custom-selectors,h2.test-custom-selectors,h3.test-custom-selectors,h4.test-custom-selectors,h5.test-custom-selectors,h6.test-custom-selectors {
 	order: 9;
 }

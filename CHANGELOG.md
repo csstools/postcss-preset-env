@@ -1,5 +1,12 @@
 # Changes to PostCSS Preset Env
 
+### 6.4.0 (November 6, 2018)
+
+- Fixed `exportTo` option to export Custom Media, Custom Properties, and Custom
+  Selectors all to the same function, object, or file
+- Added `css-prefers-color-scheme` 3.0.0 (major, non-breaking for this project)
+- Updated `cssdb` to 4.2.0 (minor)
+
 ### 6.3.1 (November 5, 2018)
 
 - Updated `caniuse-lite` to 1.0.30000905 (patch)
