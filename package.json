@@ -28,10 +28,10 @@
   "dependencies": {
     "autoprefixer": "^9.3.1",
     "browserslist": "^4.3.4",
-    "caniuse-lite": "^1.0.30000905",
-    "css-prefers-color-scheme": "^3.0.0",
+    "caniuse-lite": "^1.0.30000910",
+    "css-prefers-color-scheme": "^3.1.1",
     "cssdb": "^4.2.0",
-    "postcss": "^7.0.5",
+    "postcss": "^7.0.6",
     "postcss-attribute-case-insensitive": "^4.0.0",
     "postcss-color-functional-notation": "^2.0.1",
     "postcss-color-gray": "^5.0.0",
@@ -63,15 +63,15 @@
     "postcss-selector-not": "^4.0.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.1.2",
-    "@babel/preset-env": "^7.1.0",
+    "@babel/core": "^7.1.6",
+    "@babel/preset-env": "^7.1.6",
     "babel-eslint": "^10.0.1",
-    "eslint": "^5.8.0",
+    "eslint": "^5.9.0",
     "eslint-config-dev": "^2.0.0",
     "postcss-simple-vars": "^5.0.1",
     "postcss-tape": "^2.2.0",
     "pre-commit": "^1.2.2",
-    "rollup": "^0.67.0",
+    "rollup": "^0.67.3",
     "rollup-plugin-babel": "^4.0.3"
   },
   "eslintConfig": {

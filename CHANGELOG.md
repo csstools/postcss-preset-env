@@ -1,5 +1,11 @@
 # Changes to PostCSS Preset Env
 
+### HEAD (November 23, 2018)
+
+- Updated `caniuse-lite` to 1.0.30000910 (patch)
+- Updated `css-prefers-color-scheme` to 3.1.1 (minor, patch for this project)
+- Updated `postcss` to 7.0.6 (patch)
+
 ### 6.4.0 (November 6, 2018)
 
 - Fixed `exportTo` option to export Custom Media, Custom Properties, and Custom
