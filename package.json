@@ -7,19 +7,19 @@
   "repository": "csstools/postcss-preset-env",
   "homepage": "https://github.com/csstools/postcss-preset-env#readme",
   "bugs": "https://github.com/csstools/postcss-preset-env/issues",
-  "main": "index.cjs.js",
-  "module": "index.esm.mjs",
+  "main": "index.js",
+  "module": "index.mjs",
   "files": [
-    "index.cjs.js",
-    "index.cjs.js.map",
-    "index.esm.mjs",
-    "index.esm.mjs.map"
+    "index.js",
+    "index.js.map",
+    "index.mjs",
+    "index.mjs.map"
   ],
   "scripts": {
     "prepublishOnly": "npm test",
     "pretest": "rollup -c .rollup.js --silent",
     "test": "npm run test:js && npm run test:tape",
-    "test:js": "eslint *.js lib/*.js --cache --ignore-path .gitignore --quiet",
+    "test:js": "eslint src/*.js src/lib/*.js src/patch/*.js --cache --ignore-path .gitignore --quiet",
     "test:tape": "postcss-tape"
   },
   "engines": {

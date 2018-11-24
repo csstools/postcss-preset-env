@@ -1,10 +1,10 @@
 import babel from 'rollup-plugin-babel';
 
 export default {
-	input: 'index.js',
+	input: 'src/postcss.js',
 	output: [
-		{ file: 'index.cjs.js', format: 'cjs' },
-		{ file: 'index.esm.mjs', format: 'esm' }
+		{ file: 'index.js', format: 'cjs', sourcemap: true },
+		{ file: 'index.mjs', format: 'esm', sourcemap: true }
 	],
 	plugins: [
 		babel({

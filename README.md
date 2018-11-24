@@ -2,7 +2,6 @@
 
 [![NPM Version][npm-img]][npm-url]
 [![Build Status][cli-img]][cli-url]
-[![Windows Build Status][win-img]][win-url]
 [![Support Chat][git-img]][git-url]
 
 [PostCSS Preset Env] lets you convert modern CSS into something most browsers
@@ -363,14 +362,12 @@ postcssPresetEnv({
 });
 ```
 
-[cli-img]: https://img.shields.io/travis/csstools/postcss-preset-env.svg
+[cli-img]: https://img.shields.io/travis/csstools/postcss-preset-env/master.svg
 [cli-url]: https://travis-ci.org/csstools/postcss-preset-env
 [git-img]: https://img.shields.io/badge/support-chat-blue.svg
 [git-url]: https://gitter.im/postcss/postcss
 [npm-img]: https://img.shields.io/npm/v/postcss-preset-env.svg
 [npm-url]: https://www.npmjs.com/package/postcss-preset-env
-[win-img]: https://img.shields.io/appveyor/ci/jonathantneal/postcss-preset-env.svg
-[win-url]: https://ci.appveyor.com/project/jonathantneal/postcss-preset-env
 
 [autoprefixer]: https://github.com/postcss/autoprefixer
 [browserslist]: https://github.com/browserslist/browserslist#readme
