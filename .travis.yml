@@ -14,4 +14,6 @@ node_js:
   - 6
 
 install:
+  - git config --global core.autocrlf false
+  - git checkout -qf ${TRAVIS_COMMIT}
   - npm install --ignore-scripts
