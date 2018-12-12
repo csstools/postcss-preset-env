@@ -1,9 +1,14 @@
 # Changes to PostCSS Preset Env
 
-### HEAD (November 23, 2018)
+### 6.5.0 (December 12, 2018)
 
-- Updated `caniuse-lite` to 1.0.30000910 (patch)
+- Added `css-blank-pseudo` polyfill
+- Added `css-has-pseudo` polyfill
+- Updated `autoprefixer` to 9.4.2 (minor)
+- Updated `browserslist` to 4.3.5 (minor)
+- Updated `caniuse-lite` to 1.0.30000918 (patch)
 - Updated `css-prefers-color-scheme` to 3.1.1 (minor, patch for this project)
+- Updated `cssdb` to 4.3.0 (minor)
 - Updated `postcss` to 7.0.6 (patch)
 
 ### 6.4.0 (November 6, 2018)

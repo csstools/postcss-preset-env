@@ -24,8 +24,10 @@ export default [
 	'lab-function',
 	'rebeccapurple-color',
 	'color-mod-function', // run color-mod after other color modifications have finished
+	'blank-pseudo-class',
 	'break-properties',
 	'font-variant-property',
+	'has-pseudo-class',
 	'gap-properties',
 	'overflow-property',
 	'overflow-wrap-property',

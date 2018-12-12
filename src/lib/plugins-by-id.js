@@ -1,4 +1,5 @@
 import postcssAttributeCaseInsensitive from 'postcss-attribute-case-insensitive';
+import postcssBlankPseudo from 'css-blank-pseudo/postcss';
 import postcssColorFunctionalNotation from 'postcss-color-functional-notation';
 import postcssColorGray from 'postcss-color-gray';
 import postcssColorHexAlpha from 'postcss-color-hex-alpha';
@@ -15,6 +16,7 @@ import postcssFocusWithin from 'postcss-focus-within';
 import postcssFontVariant from 'postcss-font-variant';
 import postcssFontFamilySystemUi from '../patch/postcss-system-ui-font-family';
 import postcssGapProperties from 'postcss-gap-properties';
+import postcssHasPseudo from 'css-has-pseudo/postcss';
 import postcssImageSetPolyfill from 'postcss-image-set-function';
 import postcssInitial from 'postcss-initial';
 import postcssLabFunction from 'postcss-lab-function';
@@ -34,6 +36,7 @@ import postcssSelectorNot from 'postcss-selector-not';
 export default {
 	'all-property': postcssInitial,
 	'any-link-pseudo-class': postcssPseudoClassAnyLink,
+	'blank-pseudo-class': postcssBlankPseudo,
 	'break-properties': postcssPageBreak,
 	'case-insensitive-attributes': postcssAttributeCaseInsensitive,
 	'color-functional-notation': postcssColorFunctionalNotation,
@@ -49,6 +52,7 @@ export default {
 	'font-variant-property': postcssFontVariant,
 	'gap-properties': postcssGapProperties,
 	'gray-function': postcssColorGray,
+	'has-pseudo-class': postcssHasPseudo,
 	'hexadecimal-alpha-notation': postcssColorHexAlpha,
 	'image-set-function': postcssImageSetPolyfill,
 	'lab-function': postcssLabFunction,
