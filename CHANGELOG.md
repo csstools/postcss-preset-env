@@ -1,5 +1,20 @@
 # Changes to PostCSS Preset Env
 
+### 6.6.0 (February 28, 2019)
+
+- Moved browserslist detection from using each input file per process to using
+  the working directory on intialization, as was implied by the documentation.
+  If fixing this previously undocumented behavior causes any harm to existing
+  projects, it can be easily rolled back in a subsequent patch. For the
+  majority of projects — those with a singular browserslist configuration and
+  potentially many individually processed CSS files — we should expect reported
+  build times around 35 seconds to drop to less than 2 seconds.
+- Updated `browserslist` to 4.4.2 (minor)
+- Updated `autoprefixer` to 9.4.9 (patch)
+- Updated `caniuse-lite` to 1.0.30000939 (patch)
+- Updated `postcss` to 7.0.14 (patch)
+- Updated `postcss-attribute-case-insensitive` to 4.0.1 (patch)
+
 ### 6.5.0 (December 12, 2018)
 
 - Added `css-blank-pseudo` polyfill
