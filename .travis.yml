@@ -8,7 +8,6 @@ os:
   - osx
 
 node_js:
-  - node
   - 10
   - 8
   - 6
