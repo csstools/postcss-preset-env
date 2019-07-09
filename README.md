@@ -141,7 +141,7 @@ features.
 
 The `features` option enables or disables specific polyfills by ID. Passing
 `true` to a specific feature ID will enable its polyfill, while passing `false`
-will disable it.
+will disable it. [List of IDs](https://github.com/csstools/postcss-preset-env/blob/master/src/lib/plugins-by-id.js#L36)
 
 ```js
 postcssPresetEnv({
