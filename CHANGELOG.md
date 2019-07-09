@@ -1,5 +1,17 @@
 # Changes to PostCSS Preset Env
 
+### 6.7.0 (July 8, 2019)
+
+- Fixed the issue of autoprefixer alerting an upcoming change to the API
+- Updated `autoprefixer` to 9.6.1 (minor)
+- Updated `browserslist` to 4.6.4 (minor)
+- Updated `cssdb` to 4.4.0 (minor)
+- Updated `caniuse-lite` to 1.0.30000981 (patch)
+- Updated `postcss` to 7.0.17 (patch)
+- Updated `postcss-color-hex-alpha` to 5.0.3 (patch)
+- Updated `postcss-custom-media` to 7.0.8 (patch)
+- Updated `postcss-custom-properties` to 8.0.11 (patch)
+
 ### 6.6.0 (February 28, 2019)
 
 - Moved browserslist detection from using each input file per process to using
