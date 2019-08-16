@@ -119,6 +119,8 @@ postcss([
 | [Node](INSTALL.md#node) | [PostCSS CLI](INSTALL.md#postcss-cli) | [Webpack](INSTALL.md#webpack) | [Create React App](INSTALL.md#create-react-app) | [Gulp](INSTALL.md#gulp) | [Grunt](INSTALL.md#grunt) |
 | --- | --- | --- | --- | --- | --- |
 
+**Note**: you should include postcss@7 into devDependencies of your project manually. postcss tooling packages require it as a peer and does not install it to avoid swallowing the typical node_modules directory.
+
 ## Options
 
 ### stage
