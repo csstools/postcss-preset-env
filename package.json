@@ -34,7 +34,6 @@
     "css-has-pseudo": "^0.10.0",
     "css-prefers-color-scheme": "^3.1.1",
     "cssdb": "^4.4.0",
-    "postcss": "^7.0.17",
     "postcss-attribute-case-insensitive": "^4.0.1",
     "postcss-color-functional-notation": "^2.0.1",
     "postcss-color-gray": "^5.0.0",
@@ -65,12 +64,16 @@
     "postcss-selector-matches": "^4.0.0",
     "postcss-selector-not": "^4.0.0"
   },
+  "peerDependencies": {
+    "postcss": "7",
+  },
   "devDependencies": {
     "@babel/core": "^7.5.0",
     "@babel/preset-env": "^7.5.2",
     "babel-eslint": "^10.0.2",
     "eslint": "^5.16.0",
     "eslint-config-dev": "^2.0.0",
+    "postcss": "^7.0.17",
     "postcss-simple-vars": "^5.0.2",
     "postcss-tape": "^4.0.0",
     "pre-commit": "^1.2.2",
