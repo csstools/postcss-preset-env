@@ -2,8 +2,8 @@
 
 [PostCSS Preset Env] runs in all Node environments, with special instructions for:
 
-| [Node](#node) | [PostCSS CLI](#postcss-cli) | [Webpack](#webpack) | [Create React App](#create-react-app) | [Gulp](#gulp) | [Grunt](#grunt) |
-| --- | --- | --- | --- | --- | --- |
+| [Node](#node) | [PostCSS CLI](#postcss-cli) | [Webpack](#webpack) | [Create React App](#create-react-app) | [Gulp](#gulp) | [Grunt](#grunt) | [Rollup](#rollup) |
+| --- | --- | --- | --- | --- | --- | --- |
 
 ## Node
 
@@ -163,6 +163,30 @@ grunt.initConfig({
 });
 ```
 
+## Rollup
+
+Complete [PostCSS CLI](#postcss-cli) setup.
+
+Add [Rollup Plugin PostCSS] to your project:
+
+```bash
+npm install rollup-plugin-postcss --save-dev
+```
+
+Use [Rollup Plugin PostCSS] in your rollup.config.js:
+
+```js
+import postcss from 'rollup-plugin-postcss';
+
+module.exports = {
+  input: '...',
+  output: {...},
+  plugins: [
+    postcss({/* options */ })
+  ]
+};
+```
+
 [Gulp PostCSS]: https://github.com/postcss/gulp-postcss
 [Grunt PostCSS]: https://github.com/nDmitry/grunt-postcss
 [PostCSS]: https://github.com/postcss/postcss
@@ -171,3 +195,4 @@ grunt.initConfig({
 [PostCSS Preset Env]: https://github.com/csstools/postcss-preset-env
 [React App Rewire PostCSS]: https://github.com/csstools/react-app-rewire-postcss
 [React App Rewired]: https://github.com/timarney/react-app-rewired
+[Rollup Plugin PostCSS]: https://github.com/egoist/rollup-plugin-postcss
