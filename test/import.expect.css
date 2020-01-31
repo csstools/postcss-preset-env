@@ -1,15 +1,19 @@
 .test-custom-properties {
-	order: 1;
-	order: var(--order);
+	-webkit-box-ordinal-group: 2;
+	        order: 1;
+	-webkit-box-ordinal-group: var(--order);
+	        order: var(--order);
 }
 
 @media (max-width: 40rem) {
 	.test-custom-media-queries {
-		order: 2;
+		-webkit-box-ordinal-group: 3;
+		        order: 2;
 	}
 }
 
 h1.test-custom-selectors,h2.test-custom-selectors,h3.test-custom-selectors,h4.test-custom-selectors,h5.test-custom-selectors,h6.test-custom-selectors {
-		order: 3;
+		-webkit-box-ordinal-group: 4;
+		        order: 3;
 	}
 
