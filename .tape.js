@@ -65,6 +65,15 @@ module.exports = {
 			}
 		}
 	},
+	'custom-properties:enabled': {
+		message: 'supports { browsers: "chrome >= 60", features: { "custom-properties": true } } usage',
+		options: {
+			browsers: 'chrome >= 60',
+			features: {
+				'custom-properties': true
+			}
+		}
+	},
 	'insert:before': {
 		message: 'supports { stage: 1, features: { "color-mod-function": true }, insertBefore: { "color-mod-function": [ require("postcss-simple-vars") ] } } usage',
 		options: {

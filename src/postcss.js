@@ -88,7 +88,9 @@ export default postcss.plugin('postcss-preset-env', opts => {
 
 	// features supported by the stage and browsers
 	const supportedFeatures = stagedFeatures.filter(
-		feature => supportedBrowsers.some(
+		feature => feature.id in features
+			? features[feature.id]
+		: supportedBrowsers.some(
 			supportedBrowser => browserslist(feature.browsers, {
 				ignoreUnknownVersions: true
 			}).some(
