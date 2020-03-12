@@ -1,0 +1,8 @@
+:root {
+	--black: black;
+}
+
+test-css-variables {
+	color: black;
+	color: var(--black);
+}
