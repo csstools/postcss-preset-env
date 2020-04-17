@@ -48,7 +48,7 @@
     "postcss-double-position-gradients": "^1.0.0",
     "postcss-env-function": "^2.0.2",
     "postcss-focus-visible": "^4.0.0",
-    "postcss-focus-within": "^3.0.0",
+    "postcss-focus-within": "^4.0.0",
     "postcss-font-variant": "^4.0.0",
     "postcss-gap-properties": "^2.0.0",
     "postcss-image-set-function": "^3.0.1",
