@@ -14,7 +14,7 @@ if (process.argv.length < 3) {
 }
 
 // get process and plugin options from the command line
-const fileRegExp = /^[\w\/.]+$/;
+const fileRegExp = /^[\w/.]+$/;
 const argRegExp = /^--(\w+)=("|')?(.+)\2$/;
 const relaxedJsonPropRegExp = /(['"])?([a-z0-9A-Z_]+)(['"])?:/g;
 const relaxedJsonValueRegExp = /("[a-z0-9A-Z_]+":\s*)(?!true|false|null|\d+)'?([A-z0-9]+)'?([,}])/g;
@@ -106,6 +106,7 @@ function getStdin() {
 			process.stdin.on('readable', () => {
 				let chunk;
 
+				// eslint-disable-next-line no-cond-assign
 				while (chunk = process.stdin.read()) {
 					data += chunk;
 				}

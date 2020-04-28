@@ -80,11 +80,6 @@
 	order: 10;
 }
 
-.test-gray-function {
-	color: rgb(119,119,119);
-	color: rgba(119,119,119,0.5);
-}
-
 .test-rebeccapurple-color {
 	color: #639;
 	order: 11;
@@ -207,7 +202,7 @@
 	order: 17;
 }
 
-.test-matches-pseudo-class:first-child, .test-matches-pseudo-class.special {
+.test-matches-pseudo-class:matches(:first-child, .special) {
 	order: 18;
 }
 

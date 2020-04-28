@@ -1,5 +1,31 @@
 # Changes to PostCSS Preset Env
 
+### 7.0.0 (April 25, 2020)
+
+- Updated `autoprefixer` to 9.7.6 (minor)
+- Updated `browserslist` to 4.12.0 (minor)
+- Updated `caniuse-lite` to 1.0.30001048 (patch)
+- Updated `css-blank-pseudo` to 1.0.0 (major)
+- Updated `css-has-pseudo` to 1.0.0 (major)
+- Updated `css-prefers-color-scheme` to 4.0.0 (major)
+- Updated `cssdb` to 5.0.0 (major)
+- Updated `postcss` to 7.0.27 (patch)
+- Updated `postcss-attribute-case-insensitive` to 4.0.2 (patch)
+- Updated `postcss-color-functional-notation` to 3.0.2 (major)
+- Updated `postcss-color-hex-alpha` to 6.0.0 (major)
+- Updated `postcss-color-rebeccapurple` to 6.0.0 (major)
+- Updated `postcss-custom-properties` to 9.1.1 (major)
+- Updated `postcss-env-function` to 3.0.0 (major)
+- Updated `postcss-focus-visible` to 5.0.0 (major)
+- Updated `postcss-focus-within` to 4.0.0 (major)
+- Updated `postcss-initial` to 3.0.2 (patch)
+- Updated `postcss-lab-function` to 3.1.2 (major)
+- Updated `postcss-logical` to 4.0.2 (major)
+- Updated `postcss-nesting` to 7.0.1 (patch)
+- Updated `postcss-place` to 5.0.0 (major)
+- Removed `postcss-color-gray`
+- Updated support for Node 10+ (major)
+
 ### 6.7.0 (July 8, 2019)
 
 - Fixed the issue of autoprefixer alerting an upcoming change to the API
