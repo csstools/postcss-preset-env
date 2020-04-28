@@ -1,7 +1,6 @@
 import postcssAttributeCaseInsensitive from 'postcss-attribute-case-insensitive';
 import postcssBlankPseudo from 'css-blank-pseudo/postcss';
 import postcssColorFunctionalNotation from 'postcss-color-functional-notation';
-import postcssColorGray from 'postcss-color-gray';
 import postcssColorHexAlpha from 'postcss-color-hex-alpha';
 import postcssColorModFunction from 'postcss-color-mod-function';
 import postcssColorRebeccapurple from 'postcss-color-rebeccapurple';
@@ -51,7 +50,6 @@ export default {
 	'focus-within-pseudo-class': postcssFocusWithin,
 	'font-variant-property': postcssFontVariant,
 	'gap-properties': postcssGapProperties,
-	'gray-function': postcssColorGray,
 	'has-pseudo-class': postcssHasPseudo,
 	'hexadecimal-alpha-notation': postcssColorHexAlpha,
 	'image-set-function': postcssImageSetPolyfill,

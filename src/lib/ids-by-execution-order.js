@@ -19,7 +19,6 @@ export default [
 	'all-property', // run all-property before other property polyfills
 	'color-functional-notation',
 	'double-position-gradients',
-	'gray-function',
 	'hexadecimal-alpha-notation',
 	'lab-function',
 	'rebeccapurple-color',
