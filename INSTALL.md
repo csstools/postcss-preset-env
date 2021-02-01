@@ -78,7 +78,7 @@ module.exports = {
             options: {
               postcssOptions: {
                 ident: 'postcss',
-                plugins: () => [postcssPresetEnv(/* pluginOptions */)],
+                plugins: [postcssPresetEnv(/* pluginOptions */)],
               },
             },
           },
