@@ -39,9 +39,7 @@
     "postcss": "^8.3.7",
     "postcss-attribute-case-insensitive": "^5.0.0",
     "postcss-color-functional-notation": "^4.0.0",
-    "postcss-color-gray": "^5.0.0",
-    "postcss-color-hex-alpha": "^7.0.0",
-    "postcss-color-mod-function": "^3.0.3",
+    "postcss-color-hex-alpha": "^8.0.0",
     "postcss-color-rebeccapurple": "^7.0.0",
     "postcss-custom-media": "^8.0.0",
     "postcss-custom-properties": "^12.0.0",
@@ -54,7 +52,6 @@
     "postcss-font-variant": "^5.0.0",
     "postcss-gap-properties": "^3.0.0",
     "postcss-image-set-function": "^4.0.0",
-    "postcss-initial": "^3.0.4",
     "postcss-lab-function": "^4.0.0",
     "postcss-logical": "^5.0.0",
     "postcss-media-minmax": "^5.0.0",
@@ -64,7 +61,6 @@
     "postcss-place": "^7.0.0",
     "postcss-pseudo-class-any-link": "^7.0.0",
     "postcss-replace-overflow-wrap": "^4.0.0",
-    "postcss-selector-matches": "^4.0.0",
     "postcss-selector-not": "^5.0.0"
   },
   "devDependencies": {
