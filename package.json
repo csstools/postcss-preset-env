@@ -23,7 +23,10 @@
     "prepublishOnly": "npm test"
   },
   "engines": {
-    "node": ">=10.0.0"
+    "node": ">=12"
+  },
+  "peerDependencies": {
+    "postcss": "^8.3"
   },
   "dependencies": {
     "autoprefixer": "^9.6.1",
@@ -39,38 +42,37 @@
     "postcss-color-gray": "^5.0.0",
     "postcss-color-hex-alpha": "^5.0.3",
     "postcss-color-mod-function": "^3.0.3",
-    "postcss-color-rebeccapurple": "^6.0.0",
-    "postcss-custom-media": "^7.0.8",
-    "postcss-custom-properties": "^9.1.1",
-    "postcss-custom-selectors": "^5.1.2",
-    "postcss-dir-pseudo-class": "^5.0.0",
-    "postcss-double-position-gradients": "^2.0.0",
-    "postcss-env-function": "^3.0.0",
-    "postcss-focus-visible": "^5.0.0",
-    "postcss-focus-within": "^4.0.0",
-    "postcss-font-variant": "^4.0.0",
-    "postcss-gap-properties": "^2.0.0",
-    "postcss-image-set-function": "^3.0.1",
+    "postcss-color-rebeccapurple": "^7.0.0",
+    "postcss-custom-media": "^8.0.0",
+    "postcss-custom-properties": "^12.0.0",
+    "postcss-custom-selectors": "^6.0.0",
+    "postcss-dir-pseudo-class": "^6.0.0",
+    "postcss-double-position-gradients": "^3.0.0",
+    "postcss-env-function": "^4.0.0",
+    "postcss-focus-visible": "^6.0.1",
+    "postcss-focus-within": "^5.0.1",
+    "postcss-font-variant": "^5.0.0",
+    "postcss-gap-properties": "^3.0.0",
+    "postcss-image-set-function": "^4.0.0",
     "postcss-initial": "^3.0.2",
-    "postcss-lab-function": "^3.1.2",
-    "postcss-logical": "^4.0.2",
-    "postcss-media-minmax": "^4.0.0",
-    "postcss-nesting": "^7.0.1",
-    "postcss-overflow-shorthand": "^2.0.0",
-    "postcss-page-break": "^2.0.0",
-    "postcss-place": "^5.0.0",
-    "postcss-pseudo-class-any-link": "^6.0.0",
-    "postcss-replace-overflow-wrap": "^3.0.0",
+    "postcss-lab-function": "^4.0.0",
+    "postcss-logical": "^5.0.0",
+    "postcss-media-minmax": "^5.0.0",
+    "postcss-nesting": "^8.0.1",
+    "postcss-overflow-shorthand": "^3.0.0",
+    "postcss-page-break": "^3.0.4",
+    "postcss-place": "^7.0.0",
+    "postcss-pseudo-class-any-link": "^7.0.0",
+    "postcss-replace-overflow-wrap": "^4.0.0",
     "postcss-selector-matches": "^4.0.0",
-    "postcss-selector-not": "^4.0.0"
+    "postcss-selector-not": "^5.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",
     "@babel/preset-env": "^7.9.5",
-    "babel-eslint": "^10.1.0",
-    "eslint": "^6.8.0",
-    "postcss-simple-vars": "^5.0.2",
-    "postcss-tape": "^5.0.2",
+    "eslint": "^7.32.0",
+    "postcss-simple-vars": "^6.0.3",
+    "postcss-tape": "^6.0.1",
     "pre-commit": "^1.2.2",
     "rollup": "^2.7.3",
     "rollup-plugin-babel": "^4.4.0"
@@ -87,11 +89,16 @@
   },
   "eslintConfig": {
     "env": {
+      "browser": true,
       "es6": true,
       "node": true
     },
     "extends": "eslint:recommended",
-    "parser": "babel-eslint"
+    "parserOptions": {
+      "ecmaVersion": 2020,
+      "sourceType": "module"
+    },
+    "root": true
   },
   "rollup": {
     "input": "src/postcss.js",
@@ -100,6 +107,7 @@
     ],
     "output": [
       {
+        "exports": "default",
         "file": "dist/index.js",
         "format": "cjs"
       },
