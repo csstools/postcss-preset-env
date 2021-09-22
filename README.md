@@ -1,7 +1,7 @@
 # PostCSS Preset Env [<img src="https://postcss.github.io/postcss/logo.svg" alt="PostCSS" width="90" height="90" align="right">][postcss]
 
 [<img alt="npm version" src="https://img.shields.io/npm/v/postcss-preset-env.svg" height="20">][npm-url]
-[<img alt="build status" src="https://img.shields.io/travis/csstools/postcss-preset-env/master.svg" height="20">][cli-url]
+[<img alt="build status" src="https://github.com/csstools/postcss-preset-env/workflows/test/badge.svg" height="20">][cli-url]
 [<img alt="support chat" src="https://img.shields.io/badge/support-chat-blue.svg" height="20">][git-url]
 
 [PostCSS Preset Env] lets you convert modern CSS into something most browsers
@@ -362,8 +362,8 @@ postcssPresetEnv({
 });
 ```
 
-[cli-img]: https://img.shields.io/travis/csstools/postcss-preset-env/master.svg
-[cli-url]: https://travis-ci.org/csstools/postcss-preset-env
+[cli-img]: https://github.com/postcss/postcss-preset-env/workflows/test/badge.svg
+[cli-url]: https://github.com/postcss/postcss-preset-env/actions/workflows/test.yml?query=workflow/test
 [git-img]: https://img.shields.io/badge/support-chat-blue.svg
 [git-url]: https://gitter.im/postcss/postcss
 [npm-img]: https://img.shields.io/npm/v/postcss-preset-env.svg
