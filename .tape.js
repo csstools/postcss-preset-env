@@ -89,29 +89,18 @@ module.exports = {
 		}
 	},
 	'insert:after': {
-		message: 'supports { stage: 1, features: { "color-mod-function": { unresolved: "warn" } }, insertAfter: { "color-mod-function": [ require("postcss-simple-vars")() ] } } usage',
+		message: 'supports { stage: 1, insertAfter: { "color-mod-function": [ require("postcss-simple-vars")() ] } } usage',
 		options: {
 			stage: 1,
-			features: {
-				'color-mod-function': {
-					unresolved: 'warn'
-				}
-			},
 			insertAfter: {
 				'color-mod-function': require('postcss-simple-vars')
 			}
 		},
-		warnings: 2
 	},
 	'insert:after:exec': {
 		message: 'supports { stage: 2, features: { "color-mod-function": { unresolved: "ignore" } }, insertAfter: { "color-mod-function": require("postcss-simple-vars")() } } usage',
 		options: {
 			stage: 2,
-			features: {
-				'color-mod-function': {
-					unresolved: 'ignore'
-				}
-			},
 			insertAfter: {
 				'color-mod-function': require('postcss-simple-vars')()
 			}
