@@ -132,7 +132,6 @@
 	columns: auto;
 	column-count: auto;
 	column-fill: balance;
-	grid-column-gap: normal;
 	column-gap: normal;
 	column-rule: medium none currentColor;
 	column-span: 1;
