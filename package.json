@@ -52,6 +52,7 @@
     "postcss-font-variant": "^5.0.0",
     "postcss-gap-properties": "^3.0.0",
     "postcss-image-set-function": "^4.0.0",
+    "postcss-initial": "^3.0.4",
     "postcss-lab-function": "^4.0.0",
     "postcss-logical": "^5.0.0",
     "postcss-media-minmax": "^5.0.0",
