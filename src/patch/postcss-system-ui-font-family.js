@@ -3,11 +3,15 @@ export default function postcssSystemUiFont() {
 		postcssPlugin: 'postcss-system-ui-font',
 		Declaration(/** @type {import('postcss').Declaration} */ node) {
 			if (propertyRegExp.test(node.prop)) {
-				node.value = node.value.replace(systemUiMatch, systemUiReplace);
+				if (!node.value.includes(systemUiFamily.join(', '))) {
+					node.value = node.value.replace(systemUiMatch, systemUiReplace);
+				}
 			}
 		}
 	}
 }
+
+postcssSystemUiFont.postcss = true;
 
 const propertyRegExp = /(?:^(?:-|\\002d){2})|(?:^font(?:-family)?$)/i;
 const whitespace = '[\\f\\n\\r\\x09\\x20]';
