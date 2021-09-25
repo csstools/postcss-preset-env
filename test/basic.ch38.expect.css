@@ -98,8 +98,8 @@
 }
 
 .test-font-variant-property {
-	-webkit-font-feature-settings: "c2sc";
-	        font-feature-settings: "c2sc";
+	-webkit-font-feature-settings: "smcp";
+	        font-feature-settings: "smcp";
 	font-variant-caps: small-caps;
 	order: 16;
 }

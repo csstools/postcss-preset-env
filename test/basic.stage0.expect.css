@@ -113,7 +113,7 @@ h1.test-custom-selectors,h2.test-custom-selectors,h3.test-custom-selectors,h4.te
 }
 
 .test-font-variant-property {
-	font-feature-settings: "c2sc";
+	font-feature-settings: "smcp";
 	font-variant-caps: small-caps;
 	order: 16;
 }

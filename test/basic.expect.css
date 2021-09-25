@@ -109,7 +109,7 @@
 }
 
 .test-font-variant-property {
-	font-feature-settings: "c2sc";
+	font-feature-settings: "smcp";
 	font-variant-caps: small-caps;
 	order: 16;
 }
