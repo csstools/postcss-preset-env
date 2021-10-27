@@ -34,7 +34,7 @@
     "css-has-pseudo": "^0.10.0",
     "css-prefers-color-scheme": "^3.1.1",
     "cssdb": "^4.4.0",
-    "postcss": "^7.0.17",
+    "postcss": "^8.3.4",
     "postcss-attribute-case-insensitive": "^4.0.1",
     "postcss-color-functional-notation": "^2.0.1",
     "postcss-color-gray": "^5.0.0",
