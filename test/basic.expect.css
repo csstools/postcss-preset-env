@@ -109,7 +109,7 @@
 }
 
 .test-font-variant-property {
-	font-feature-settings: "c2sc";
+	font-feature-settings: "smcp";
 	font-variant-caps: small-caps;
 	order: 16;
 }
@@ -139,7 +139,6 @@
 	     column-count: auto;
 	-moz-column-fill: balance;
 	     column-fill: balance;
-	grid-column-gap: normal;
 	-moz-column-gap: normal;
 	     column-gap: normal;
 	-moz-column-rule: medium none currentColor;

@@ -16,6 +16,7 @@ import postcssFontFamilySystemUi from '../patch/postcss-system-ui-font-family';
 import postcssGapProperties from 'postcss-gap-properties';
 import postcssHasPseudo from 'css-has-pseudo/postcss';
 import postcssImageSetPolyfill from 'postcss-image-set-function';
+import postcssInitial from 'postcss-initial';
 import postcssLabFunction from 'postcss-lab-function';
 import postcssLogical from 'postcss-logical';
 import postcssMediaMinmax from 'postcss-media-minmax';
@@ -30,6 +31,7 @@ import postcssSelectorNot from 'postcss-selector-not';
 
 // postcss plugins ordered by id
 export default {
+	'all-property': postcssInitial,
 	'any-link-pseudo-class': postcssPseudoClassAnyLink,
 	'blank-pseudo-class': postcssBlankPseudo,
 	'break-properties': postcssPageBreak,

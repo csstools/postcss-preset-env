@@ -8,6 +8,17 @@
 }
 
 .test-image-set-function {
+	background-image: url(img/test.png);
+}
+
+@media (min-resolution: 192dpi) {
+
+.test-image-set-function {
+	background-image:  url(img/test-2x.png);
+}
+}
+
+.test-image-set-function {
 	background-image: -webkit-image-set(url(img/test.png) 1x, url(img/test-2x.png) 2x);
 	background-image: image-set(url(img/test.png) 1x, url(img/test-2x.png) 2x);
 	order: 2;
@@ -98,8 +109,8 @@
 }
 
 .test-font-variant-property {
-	-webkit-font-feature-settings: "c2sc";
-	        font-feature-settings: "c2sc";
+	-webkit-font-feature-settings: "smcp";
+	        font-feature-settings: "smcp";
 	font-variant-caps: small-caps;
 	order: 16;
 }

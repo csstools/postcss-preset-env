@@ -1,5 +1,5 @@
-$color: rebeccapurple;
+$font: system-ui;
 
-test-css-color-modifying-colors {
-	color: color-mod($color alpha(80%));
+.test-variable {
+	font-family: $font;
 }

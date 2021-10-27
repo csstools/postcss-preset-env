@@ -1,3 +1,5 @@
-test-css-color-modifying-colors {
-	color: color-mod(#639 alpha(80%));
+$font: system-ui;
+
+.test-variable {
+	font-family: $font;
 }
