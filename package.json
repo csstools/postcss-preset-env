@@ -29,14 +29,14 @@
     "postcss": "^8.3"
   },
   "dependencies": {
-    "autoprefixer": "^10.3.5",
-    "browserslist": "^4.17.1",
-    "caniuse-lite": "^1.0.30001259",
+    "autoprefixer": "^10.4.0",
+    "browserslist": "^4.17.5",
+    "caniuse-lite": "^1.0.30001272",
     "css-blank-pseudo": "^2.0.0",
     "css-has-pseudo": "^2.0.0",
     "css-prefers-color-scheme": "^5.0.0",
     "cssdb": "^5.0.0",
-    "postcss": "^8.3.7",
+    "postcss": "^8.3",
     "postcss-attribute-case-insensitive": "^5.0.0",
     "postcss-color-functional-notation": "^4.0.0",
     "postcss-color-hex-alpha": "^8.0.0",
@@ -56,7 +56,7 @@
     "postcss-lab-function": "^4.0.0",
     "postcss-logical": "^5.0.0",
     "postcss-media-minmax": "^5.0.0",
-    "postcss-nesting": "^8.0.1",
+    "postcss-nesting": "^9.0.0",
     "postcss-overflow-shorthand": "^3.0.0",
     "postcss-page-break": "^3.0.4",
     "postcss-place": "^7.0.0",
@@ -65,13 +65,13 @@
     "postcss-selector-not": "^5.0.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.15.5",
-    "@babel/preset-env": "^7.15.6",
-    "eslint": "^7.32.0",
+    "@babel/core": "^7.15.8",
+    "@babel/preset-env": "^7.15.8",
+    "eslint": "^8.1.0",
     "postcss-simple-vars": "^6.0.3",
     "postcss-tape": "^6.0.1",
     "pre-commit": "^1.2.2",
-    "rollup": "^2.57.0",
+    "rollup": "^2.58.3",
     "rollup-plugin-babel": "^4.4.0"
   },
   "babel": {
