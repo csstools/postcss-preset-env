@@ -56,7 +56,7 @@
     "postcss-lab-function": "^4.0.0",
     "postcss-logical": "^5.0.0",
     "postcss-media-minmax": "^5.0.0",
-    "postcss-nesting": "^9.0.0",
+    "postcss-nesting": "^10.0.0",
     "postcss-overflow-shorthand": "^3.0.0",
     "postcss-page-break": "^3.0.4",
     "postcss-place": "^7.0.0",
