@@ -9,7 +9,7 @@
 	}
 }
 
-h1.test-custom-selectors,h2.test-custom-selectors,h3.test-custom-selectors,h4.test-custom-selectors,h5.test-custom-selectors,h6.test-custom-selectors {
+.test-custom-selectors:is(h1),.test-custom-selectors:is(h2),.test-custom-selectors:is(h3),.test-custom-selectors:is(h4),.test-custom-selectors:is(h5),.test-custom-selectors:is(h6) {
 		order: 3;
 	}
 
