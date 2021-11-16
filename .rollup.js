@@ -1,16 +1,9 @@
-import babel from 'rollup-plugin-babel';
+import pkg from './package.json'
 
 export default {
-	input: 'src/postcss.js',
-	output: [
-		{ file: 'index.js', format: 'cjs', sourcemap: true },
-		{ file: 'index.mjs', format: 'esm', sourcemap: true }
-	],
-	plugins: [
-		babel({
-			presets: [
-				['@babel/env', { targets: { node: 6 } }]
-			]
-		})
-	]
-};
+	...pkg.rollup,
+	plugins: pkg.rollup.plugins.map(plugin => require(plugin)()),
+	onwarn(warning, warn) {
+		if (warning.code !== 'UNRESOLVED_IMPORT') warn(warning)
+	}
+}

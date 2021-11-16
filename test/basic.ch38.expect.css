@@ -8,6 +8,17 @@
 }
 
 .test-image-set-function {
+	background-image: url(img/test.png);
+}
+
+@media (min-resolution: 192dpi) {
+
+.test-image-set-function {
+	background-image:  url(img/test-2x.png);
+}
+}
+
+.test-image-set-function {
 	background-image: -webkit-image-set(url(img/test.png) 1x, url(img/test-2x.png) 2x);
 	background-image: image-set(url(img/test.png) 1x, url(img/test-2x.png) 2x);
 	order: 2;
@@ -70,11 +81,6 @@
 	order: 10;
 }
 
-.test-gray-function {
-	color: rgb(119,119,119);
-	color: rgba(119,119,119,0.5);
-}
-
 .test-rebeccapurple-color {
 	color: rebeccapurple;
 	order: 11;
@@ -103,8 +109,8 @@
 }
 
 .test-font-variant-property {
-	-webkit-font-feature-settings: "c2sc";
-	        font-feature-settings: "c2sc";
+	-webkit-font-feature-settings: "smcp";
+	        font-feature-settings: "smcp";
 	font-variant-caps: small-caps;
 	order: 16;
 }
@@ -114,7 +120,7 @@
 	order: 17;
 }
 
-.test-matches-pseudo-class:first-child, .test-matches-pseudo-class.special {
+.test-matches-pseudo-class:matches(:first-child, .special) {
 	order: 18;
 }
 

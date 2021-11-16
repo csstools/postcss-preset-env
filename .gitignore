@@ -1,12 +1,13 @@
+dist
 node_modules
 package-lock.json
+yarn.lock
 *.log*
 *.result.css
 .*
 !.editorconfig
+!.gitattributes
+!.github
 !.gitignore
 !.rollup.js
 !.tape.js
-!.travis.yml
-/index.js*
-/index.mjs*

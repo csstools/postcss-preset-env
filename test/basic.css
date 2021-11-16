@@ -60,11 +60,6 @@
 	order: 10;
 }
 
-.test-gray-function {
-	color: gray(50);
-	color: gray(50 / 50%);
-}
-
 .test-rebeccapurple-color {
 	color: rebeccapurple;
 	order: 11;
@@ -82,8 +77,8 @@
 }
 
 .test-lab-function {
-	background-color: lab(40 56.6 39);
-	color: lch(40 68.8 34.5 / 50%);
+	background-color: lab(40% 56.6 39);
+	color: lch(40% 68.8 34.5 / 50%);
 	order: 14;
 }
 

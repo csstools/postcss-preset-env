@@ -1,14 +1,13 @@
-import autoprefixer from 'autoprefixer'
+import autoprefixer from 'autoprefixer';
 import browserslist from 'browserslist';
 import cssdb from 'cssdb';
-import postcss from 'postcss';
 import plugins from './lib/plugins-by-id';
 import getTransformedInsertions from './lib/get-transformed-insertions';
 import getUnsupportedBrowsersByFeature from './lib/get-unsupported-browsers-by-feature';
 import idsByExecutionOrder from './lib/ids-by-execution-order';
 import writeToExports from './lib/write-to-exports';
 
-export default postcss.plugin('postcss-preset-env', opts => {
+const plugin = opts => {
 	// initialize options
 	const features = Object(Object(opts).features);
 	const insertBefore = Object(Object(opts).insertBefore);
@@ -17,13 +16,13 @@ export default postcss.plugin('postcss-preset-env', opts => {
 	const stage = 'stage' in Object(opts)
 		? opts.stage === false
 			? 5
-		: parseInt(opts.stage) || 0
-	: 2;
+			: parseInt(opts.stage) || 0
+		: 2;
 	const autoprefixerOptions = Object(opts).autoprefixer;
 	const sharedOpts = initializeSharedOpts(Object(opts));
 	const stagedAutoprefixer = autoprefixerOptions === false
 		? () => {}
-	: autoprefixer(Object.assign({ overrideBrowserslist: browsers }, autoprefixerOptions));
+		: autoprefixer(Object.assign({ overrideBrowserslist: browsers }, autoprefixerOptions));
 
 	// polyfillable features (those with an available postcss plugin)
 	const polyfillableFeatures = cssdb.concat(
@@ -61,26 +60,35 @@ export default postcss.plugin('postcss-preset-env', opts => {
 	const stagedFeatures = polyfillableFeatures.filter(
 		feature => feature.id in features
 			? features[feature.id]
-		: feature.stage >= stage
+			: feature.stage >= stage
 	).map(
-		feature => ({
-			browsers: feature.browsers,
-			plugin: typeof feature.plugin.process === 'function'
-				? features[feature.id] === true
-					? sharedOpts
-						// if the plugin is enabled and has shared options
-						? feature.plugin(Object.assign({}, sharedOpts))
-					// otherwise, if the plugin is enabled
-					: feature.plugin()
-				: sharedOpts
+		feature => {
+			let options;
+			let plugin;
+
+			if (features[feature.id] === true) {
+				// if the plugin is enabled
+				options = sharedOpts ? Object.assign({}, sharedOpts) : undefined;
+			} else {
+				options = sharedOpts
 					// if the plugin has shared options and individual options
-					? feature.plugin(Object.assign({}, sharedOpts, features[feature.id]))
-				// if the plugin has individual options
-				: feature.plugin(Object.assign({}, features[feature.id]))
-			// if the plugin is already initialized
-			: feature.plugin,
-			id: feature.id
-		})
+					? Object.assign({}, sharedOpts, features[feature.id])
+					// if the plugin has individual options
+					: Object.assign({}, features[feature.id]);
+			}
+
+			if (feature.plugin.postcss) {
+				plugin = feature.plugin(options);
+			} else {
+				plugin = feature.plugin;
+			}
+
+			return {
+				browsers: feature.browsers,
+				plugin,
+				id: feature.id
+			};
+		}
 	);
 
 	// browsers supported by the configuration
@@ -90,35 +98,28 @@ export default postcss.plugin('postcss-preset-env', opts => {
 	const supportedFeatures = stagedFeatures.filter(
 		feature => feature.id in features
 			? features[feature.id]
-		: supportedBrowsers.some(
-			supportedBrowser => browserslist(feature.browsers, {
-				ignoreUnknownVersions: true
-			}).some(
-				polyfillBrowser => polyfillBrowser === supportedBrowser
+			: supportedBrowsers.some(
+				supportedBrowser => browserslist(feature.browsers, {
+					ignoreUnknownVersions: true
+				}).some(
+					polyfillBrowser => polyfillBrowser === supportedBrowser
+				)
 			)
-		)
 	);
 
-	return (root, result) => {
-		// polyfills run in execution order
-		const polyfills = supportedFeatures.reduce(
-			(promise, feature) => promise.then(
-				() => feature.plugin(result.root, result)
-			),
-			Promise.resolve()
-		).then(
-			() => stagedAutoprefixer(result.root, result)
-		).then(
-			() => {
-				if (Object(opts).exportTo) {
-					writeToExports(sharedOpts.exportTo, opts.exportTo);
-				}
-			}
-		)
+	const usedPlugins = supportedFeatures.map(feature => feature.plugin);
+	usedPlugins.push(stagedAutoprefixer);
 
-		return polyfills;
+	return {
+		postcssPlugin: 'postcss-preset-env',
+		plugins: usedPlugins,
+		OnceExit: function() {
+			if ( Object( opts ).exportTo ) {
+				writeToExports( sharedOpts.exportTo, opts.exportTo );
+			}
+		}
 	};
-});
+}
 
 const initializeSharedOpts = opts => {
 	if ('importFrom' in opts || 'exportTo' in opts || 'preserve' in opts) {
@@ -145,3 +146,7 @@ const initializeSharedOpts = opts => {
 
 	return false;
 };
+
+plugin.postcss = true;
+
+export default plugin;
