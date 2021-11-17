@@ -36,6 +36,11 @@
 		order: 5;
 	}
 
+.test-nesting-rules {
+
+	order: 6;
+}
+
 @media (max-width: 30em) {
 	.test-custom-media-queries {
 		order: 7;
