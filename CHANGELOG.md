@@ -1,5 +1,18 @@
 # Changes to PostCSS Preset Env
 
+### 7.0.1 (November 19, 2021)
+
+- Fixed infinite loop in double-position-gradients [223](https://github.com/csstools/postcss-preset-env/issues/223)
+- Fixed "Unknown word" errors in when parsing CSS values [224](https://github.com/csstools/postcss-preset-env/issues/224)
+- Fixed "undefined" CSS values after transforms with postcss-place [225](https://github.com/csstools/postcss-preset-env/issues/225)
+- Updated `postcss-color-functional-notation` to 4.0.1 (patch)
+- Updated `postcss-double-position-gradients` to 3.0.1 (patch)
+- Updated `postcss-env-function` to 4.0.2 (patch)
+- Updated `postcss-image-set-function` to 4.0.2 (patch)
+- Updated `postcss-lab-function` to 4.0.1 (patch)
+- Updated `postcss-nesting` to 10.0.2 (patch)
+- Updated `postcss-place` to 7.0.1 (patch)
+
 ### 7.0.0 (November 16, 2021)
 
 - Updated `autoprefixer` to 10.4.0 (major)
