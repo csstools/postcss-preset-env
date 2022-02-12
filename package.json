@@ -28,6 +28,7 @@
   },
   "dependencies": {
     "autoprefixer": "^9.6.1",
+    "boxen": "^5.1.2",
     "browserslist": "^4.6.4",
     "caniuse-lite": "^1.0.30000981",
     "css-blank-pseudo": "^0.1.4",

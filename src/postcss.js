@@ -1,6 +1,7 @@
 import autoprefixer from 'autoprefixer'
 import browserslist from 'browserslist';
 import cssdb from 'cssdb';
+import boxen from 'boxen';
 import postcss from 'postcss';
 import plugins from './lib/plugins-by-id';
 import getTransformedInsertions from './lib/get-transformed-insertions';
@@ -98,6 +99,13 @@ export default postcss.plugin('postcss-preset-env', opts => {
 	);
 
 	return (root, result) => {
+		const majorVersion = parseInt(result.processor.version.split('.')[0]);
+		if (majorVersion > 7) {
+			console.log('');
+			console.log(boxen(`This version of postcss-preset-env is not optimised to work with PostCSS 8.\nPlease update to version ${majorVersion} of PostCSS Preset Env.\n\n If you find issues, you can report it at: \nhttps://github.com/csstools/postcss-plugins/issues/new/choose`, { padding: 1, textAlignment: 'center' }));
+			console.log('');
+		}
+
 		// polyfills run in execution order
 		const polyfills = supportedFeatures.reduce(
 			(promise, feature) => promise.then(
