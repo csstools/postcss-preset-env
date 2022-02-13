@@ -98,6 +98,23 @@ export default postcss.plugin('postcss-preset-env', opts => {
 	);
 
 	return (root, result) => {
+		const majorVersion = parseInt(result.processor.version.split('.')[0]);
+		if (majorVersion > 7) {
+			console.log('');
+			console.log(`
+┌─────────────────────────────────────────────────────────────────────────────────┐
+│                                                                                 │
+│   This version of postcss-preset-env is not optimised to work with PostCSS 8.   │
+│                Please update to version 7 of PostCSS Preset Env.                │
+│                                                                                 │
+│                    If you find issues, you can report it at:                    │
+│          https://github.com/csstools/postcss-plugins/issues/new/choose          │
+│                                                                                 │
+└─────────────────────────────────────────────────────────────────────────────────┘
+			`);
+			console.log('');
+		}
+
 		// polyfills run in execution order
 		const polyfills = supportedFeatures.reduce(
 			(promise, feature) => promise.then(
